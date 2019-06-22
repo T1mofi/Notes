@@ -1,20 +1,18 @@
 import UIKit
 
 extension String {
-    static func random(length: Int) -> String {
+    static func random(length: Int) -> String? {
+        
         guard length > 0 else {
-            return ""
+            return nil
         }
         
-        let symbols:NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let availableSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     
         var generatedString = ""
         
         for _ in 0...length {
-            let randomIndex:Int = Int.random(in: 3...symbols.length)
-            var character = symbols.character(at: randomIndex)
-            
-            generatedString += NSString(characters: &character, length: 1) as String
+            generatedString += String(availableSymbols.randomElement()!)
         }
         
         return generatedString
