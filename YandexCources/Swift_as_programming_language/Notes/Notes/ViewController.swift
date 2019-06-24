@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             print("There is not self-distraction date")
         }
         
-        var someString:String = "exampleStr"
+        
         
     }
 
