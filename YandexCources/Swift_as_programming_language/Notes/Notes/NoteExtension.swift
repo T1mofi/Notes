@@ -37,31 +37,36 @@ extension Note {
     }
     
     static func parse(json: [String: Any]) -> Note? {
+        
+        //TODO: insert guard(else return nil)
         let uid = json["uid"] as! String
         let title = json["title"] as! String
         let content = json["content"] as! String
         
-        let color:UIColor
-        if let dictColor = json["color"] {
-            color = UIColor.parce(dictionary: dictColor  as! [String: Float])
-        } else {
-            color = .white
+        var color:UIColor {
+            if let dictColor = json["color"] {
+                return UIColor.parce(dictionary: dictColor  as! [String: Float])
+            } else {
+                return .white
+            }
         }
         
-        let importance: Importance
-        if let stringImportance = json["importance"] {
-            importance =  Importance(rawValue: stringImportance as! String)!
-        } else {
-            importance = .normal
+        var importance: Importance {
+            if let stringImportance = json["importance"] {
+                return Importance(rawValue: stringImportance as! String)!
+            } else {
+                return .normal
+            }
         }
     
-        let date: Date?
-        if let selfDestructionDate = json["selfDestructionDate"] {
-            let frmt = DateFormatter()
-            frmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            date = frmt.date(from: selfDestructionDate as! String)
-        } else {
-            date = nil
+        var date: Date? {
+            if let selfDestructionDate = json["selfDestructionDate"] {
+                let frmt = DateFormatter()
+                frmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                return frmt.date(from: selfDestructionDate as! String)
+            } else {
+                return nil
+            }
         }
         
         return Note(uid: uid, title: title, content: content, color: color, importance: importance, selfDestructionDate: date)
