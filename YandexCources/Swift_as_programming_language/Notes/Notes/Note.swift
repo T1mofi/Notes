@@ -22,20 +22,20 @@ struct Note {
     let content:String
     let color:UIColor
     let importance:Importance
-    let selfDistractionDate:Date?
+    let selfDestructionDate:Date?
     
     init(uid: String = UUID().uuidString,
          title: String = "Title",
          content: String = "Content",
          color: UIColor = UIColor.white,
          importance: Importance = .normal,
-         selfDistractionDate: Date? = nil)
+         selfDestructionDate: Date? = nil)
     {
         self.title = title
         self.content = content
         self.color = color
         self.importance = importance
-        self.selfDistractionDate = selfDistractionDate
+        self.selfDestructionDate = selfDestructionDate
         self.uid = uid
     }
 }

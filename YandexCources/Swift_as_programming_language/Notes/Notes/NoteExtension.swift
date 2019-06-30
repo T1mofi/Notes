@@ -25,12 +25,12 @@ extension Note {
             jsonDict["importance"] = importance.rawValue
         }
         
-        if let date = selfDistractionDate {
+        if let date = selfDestructionDate {
             let frmt = DateFormatter()
             frmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let stringDate = frmt.string(from: date)
             
-            jsonDict["selfDistractionDate"] = stringDate
+            jsonDict["selfDestructionDate"] = stringDate
         }
         
         return jsonDict
@@ -55,9 +55,16 @@ extension Note {
             importance = .normal
         }
     
-        let date: Date? = nil
+        let date: Date?
+        if let selfDestructionDate = json["selfDestructionDate"] {
+            let frmt = DateFormatter()
+            frmt.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            date = frmt.date(from: selfDestructionDate as! String)
+        } else {
+            date = nil
+        }
         
-        return Note(uid: uid, title: title, content: content, color: color, importance: importance, selfDistractionDate: date)
+        return Note(uid: uid, title: title, content: content, color: color, importance: importance, selfDestructionDate: date)
     }
 }
 

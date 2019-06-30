@@ -20,7 +20,7 @@ class ViewController: UIViewController {
             content: "MyContent",
             color: UIColor.yellow,
             importance: .important,
-            selfDistractionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
+            selfDestructionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
         
     
         print(note.json)
