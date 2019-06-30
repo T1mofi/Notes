@@ -11,8 +11,7 @@ import UIKit
 
 extension Note {
     var json: [String: Any] {
-        
-        var jsonDict = Dictionary<String, Any>()
+        var jsonDict = [String: Any]()
         
         jsonDict["uid"] = uid
         jsonDict["title"] = title
@@ -43,16 +42,11 @@ extension Note {
         let content = json["content"] as! String
         
         let color:UIColor
-        if let dictColor = json["color"] as? [String: Float] {
-            color = UIColor(red: CGFloat(dictColor["red"]!),
-                            green: CGFloat(dictColor["green"]!),
-                            blue: CGFloat(dictColor["blue"]!),
-                            alpha: CGFloat(dictColor["alpha"]!))
+        if let dictColor = json["color"] {
+            color = UIColor.parce(dictionary: dictColor  as! [String: Float])
         } else {
             color = .white
         }
-        
-            
         
         let importance: Importance
         if let stringImportance = json["importance"] {
@@ -62,7 +56,6 @@ extension Note {
         }
     
         let date: Date? = nil
-
         
         return Note(uid: uid, title: title, content: content, color: color, importance: importance, selfDistractionDate: date)
     }
@@ -79,5 +72,12 @@ extension UIColor {
         self.getRed(&r, green: &g, blue: &b, alpha: &a)
         
         return ["red": Float(r), "green": Float(g), "blue": Float(b), "alpha": Float(a)]
+    }
+    
+    class func parce(dictionary: [String: Float]) -> UIColor {
+        return UIColor(red: CGFloat(dictionary["red"]!),
+                       green: CGFloat(dictionary["green"]!),
+                       blue: CGFloat(dictionary["blue"]!),
+                       alpha: CGFloat(dictionary["alpha"]!))
     }
 }

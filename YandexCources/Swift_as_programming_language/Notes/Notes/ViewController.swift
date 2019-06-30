@@ -18,7 +18,7 @@ class ViewController: UIViewController {
             uid: "uid",
             title: "MyTitle",
             content: "MyContent",
-            color: UIColor.black,
+            color: UIColor.yellow,
             importance: .important,
             selfDistractionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
         
@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         
         let noteFromJSON = Note.parse(json: note.json)
         
-        print("noteFromJSON JSON \(noteFromJSON?.json)")
+        print("noteFromJSON JSON \((noteFromJSON?.json)!)")
+        print((noteFromJSON?.color)!)
 
     
         
