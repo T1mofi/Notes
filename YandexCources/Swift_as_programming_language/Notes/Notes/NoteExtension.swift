@@ -38,10 +38,12 @@ extension Note {
     
     static func parse(json: [String: Any]) -> Note? {
         
-        //TODO: insert guard(else return nil)
-        let uid = json["uid"] as! String
-        let title = json["title"] as! String
-        let content = json["content"] as! String
+        guard let uid = json["uid"] as? String,
+            let title = json["title"] as? String,
+            let content = json["content"] as? String
+            else {
+                return nil
+        }
         
         var color:UIColor {
             if let dictColor = json["color"] {

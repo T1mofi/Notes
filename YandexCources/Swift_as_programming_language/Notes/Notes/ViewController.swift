@@ -15,7 +15,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let note:Note = Note(
-            uid: "uid",
+            title: "MyTitle",
+            content: "MyContent",
+            color: UIColor.yellow,
+            importance: .important,
+            selfDestructionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
+        
+        let note2:Note = Note(
             title: "MyTitle",
             content: "MyContent",
             color: UIColor.yellow,
@@ -24,17 +30,33 @@ class ViewController: UIViewController {
         
     
         print(note.json)
+        print("Note json\n")
         
         let noteFromJSON = Note.parse(json: note.json)
+        print(noteFromJSON?.json ?? "nil")
+        print("noteFromJSON json\n")
         
-        print("noteFromJSON JSON \((noteFromJSON?.json)!)")
-        print((noteFromJSON?.color)!)
-
     
+        let notebook = FileNotebook()
         
+        notebook.add(note)
+        notebook.add(note2)
+        print(notebook.notes)
+        print("Notebook\n")
         
+        notebook.saveToFile()
+        
+        for key in notebook.notes.keys {
+            notebook.remove(with: key)
+        }
+        
+        print(notebook.notes)
+        print("After delete\n")
+        
+        notebook.loadFromFile()
+        
+        print(notebook.notes)
+
     }
-
-
 }
 
