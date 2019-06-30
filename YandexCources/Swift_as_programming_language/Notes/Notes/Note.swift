@@ -11,7 +11,7 @@ import UIKit
 
 struct Note {
     
-    enum Importance {
+    enum Importance: String {
         case unimportant
         case normal
         case important
@@ -24,14 +24,19 @@ struct Note {
     let importance:Importance
     let selfDistractionDate:Date?
     
-    init(title:String = "Title", content:String = "Content", color:UIColor = UIColor.white, importance:Importance = .normal, selfDistractionDate:Date? = nil) {
+    init(uid: String = UUID().uuidString,
+         title: String = "Title",
+         content: String = "Content",
+         color: UIColor = UIColor.white,
+         importance: Importance = .normal,
+         selfDistractionDate: Date? = nil)
+    {
         self.title = title
         self.content = content
         self.color = color
         self.importance = importance
         self.selfDistractionDate = selfDistractionDate
-        
-        uid = UUID().uuidString
+        self.uid = uid
     }
 }
 

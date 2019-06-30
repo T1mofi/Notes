@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
 		07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664622BBF934009E1019 /* AppDelegate.swift */; };
 		07E7664922BBF934009E1019 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664822BBF934009E1019 /* ViewController.swift */; };
 		07E7664C22BBF934009E1019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664A22BBF934009E1019 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0728837622C3B57100380D3A /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		07E7664322BBF934009E1019 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E7664622BBF934009E1019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E7664822BBF934009E1019 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
 				07E7665222BBF936009E1019 /* Info.plist */,
 				07E7665822BBF9D4009E1019 /* Note.swift */,
+				0728837622C3B57100380D3A /* NoteExtension.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E7664922BBF934009E1019 /* ViewController.swift in Sources */,
+				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,
 			);

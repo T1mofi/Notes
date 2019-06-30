@@ -14,15 +14,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let note:Note = Note(title: "Visit Shift", content: "some information about shift", color: .black, importance: .important,selfDistractionDate: Date(timeInterval: 86400, since: Date()))
-    
-        if let distractionDate = note.selfDistractionDate {
-            print(distractionDate)
-            print(note.importance)
-        } else {
-            print("There is not self-distraction date")
-        }
+        let note:Note = Note(
+            uid: "uid",
+            title: "MyTitle",
+            content: "MyContent",
+            color: UIColor.black,
+            importance: .important,
+            selfDistractionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
         
+    
+        print(note.json)
+        
+        let noteFromJSON = Note.parse(json: note.json)
+        
+        print("noteFromJSON JSON \(noteFromJSON?.json)")
+
+    
         
         
     }
