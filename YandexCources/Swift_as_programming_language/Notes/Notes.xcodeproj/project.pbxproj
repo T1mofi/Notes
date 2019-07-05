@@ -41,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072227E422C9695E00323738 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07E7665822BBF9D4009E1019 /* Note.swift */,
+				0728837622C3B57100380D3A /* NoteExtension.swift */,
+				072227E222C92F9100323738 /* FileNotebook.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		07E7663A22BBF934009E1019 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +70,13 @@
 		07E7664522BBF934009E1019 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				072227E422C9695E00323738 /* Model */,
 				07E7664622BBF934009E1019 /* AppDelegate.swift */,
 				07E7664822BBF934009E1019 /* ViewController.swift */,
 				07E7664A22BBF934009E1019 /* Main.storyboard */,
 				07E7664D22BBF936009E1019 /* Assets.xcassets */,
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
 				07E7665222BBF936009E1019 /* Info.plist */,
-				07E7665822BBF9D4009E1019 /* Note.swift */,
-				0728837622C3B57100380D3A /* NoteExtension.swift */,
-				072227E222C92F9100323738 /* FileNotebook.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -304,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sikorskiit.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +330,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sikorskiit.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
