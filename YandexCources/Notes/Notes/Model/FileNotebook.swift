@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import CocoaLumberjack
 
 class FileNotebook {
     private(set) var notes = [String: Note]()
     
     public func add(_ note: Note) {
+        DDLogInfo("Add note whith uid \(note.uid)")
         notes[note.uid] = note
     }
     
     public func remove(with uid: String) {
+        DDLogInfo("Remove note whith uid \(uid)")
         notes.removeValue(forKey: uid)
     }
     
@@ -24,6 +27,7 @@ class FileNotebook {
         let fileUrl = documentDirectoryUrl.appendingPathComponent("Notes.json")
         
         do {
+            DDLogInfo("Save to file \(json)")
             let data = try JSONSerialization.data(withJSONObject: json, options: [])
             try data.write(to: fileUrl, options: [])
         } catch {
@@ -39,6 +43,7 @@ class FileNotebook {
             let data = try Data(contentsOf: fileUrl, options: [])
             guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: Any]] else { return }
             retrieveNotesFromJson(json: json)
+            DDLogInfo("Load from file \(json)")
         } catch {
             print(error)
         }

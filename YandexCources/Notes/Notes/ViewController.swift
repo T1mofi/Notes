@@ -41,8 +41,6 @@ class ViewController: UIViewController {
         
         notebook.add(note)
         notebook.add(note2)
-        print(notebook.notes)
-        print("Notebook\n")
         
         notebook.saveToFile()
         
@@ -50,12 +48,8 @@ class ViewController: UIViewController {
             notebook.remove(with: key)
         }
         
-        print(notebook.notes)
-        print("After delete\n")
-        
         notebook.loadFromFile()
-        
-        print(notebook.notes)
+
 
     }
 }
