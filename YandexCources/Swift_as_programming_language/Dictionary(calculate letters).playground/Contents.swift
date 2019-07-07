@@ -13,4 +13,3 @@ func calcLetters(str: String) -> [Character: Int] {
     
     return lettersStorage
 }
-
