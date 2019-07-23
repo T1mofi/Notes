@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,24 +15,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="60" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="B3j-1b-UkJ">
-                                <rect key="frame" x="160" y="50" width="94" height="29"/>
+                                <rect key="frame" x="113" y="50" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="A7S-9G-piP"/>
                                 </connections>
                             </stepper>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT0-MS-7UU">
-                                <rect key="frame" x="20" y="149" width="374" height="505"/>
+                                <rect key="frame" x="20" y="149" width="280" height="337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="smS-YN-U3g" userLabel="gameImage">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="7uv-2C-pTZ"/>
                                             <constraint firstAttribute="width" constant="80" id="cOS-pX-ME8"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="m2r-KZ-wI5" appends="YES" id="tbu-lf-OZe"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,13 +57,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game time 20 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqY-ZC-BjT" userLabel="counter">
-                                <rect key="frame" x="109" y="99" width="196" height="30"/>
+                                <rect key="frame" x="62" y="99" width="196" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgb-c6-cqA" userLabel="startStopButton">
-                                <rect key="frame" x="178" y="674" width="58" height="42"/>
+                                <rect key="frame" x="131" y="506" width="58" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <size key="titleShadowOffset" width="2" height="0.0"/>
                                 <state key="normal" title="Start">
@@ -77,14 +81,33 @@
                                     <action selector="startStopButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QLf-KD-PWf"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-9R-Kfb" userLabel="ScoreStackView">
+                                <rect key="frame" x="50" y="42.5" width="44.5" height="44.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-tr-bSm" userLabel="ScoreLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-6D-cFM" userLabel="ScoreValueLabel">
+                                        <rect key="frame" x="0.0" y="20.5" width="44.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UKa-9R-Kfb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="3gF-Qp-OWb"/>
                             <constraint firstItem="Mgb-c6-cqA" firstAttribute="top" secondItem="NT0-MS-7UU" secondAttribute="bottom" constant="20" id="8yp-yH-dOZ"/>
                             <constraint firstItem="FqY-ZC-BjT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BJC-yt-ba3"/>
                             <constraint firstItem="NT0-MS-7UU" firstAttribute="top" secondItem="FqY-ZC-BjT" secondAttribute="bottom" constant="20" id="U9Y-SY-YOv"/>
                             <constraint firstItem="Mgb-c6-cqA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Urb-cP-WRf"/>
                             <constraint firstItem="FqY-ZC-BjT" firstAttribute="top" secondItem="B3j-1b-UkJ" secondAttribute="bottom" constant="20" id="Zkc-Le-c3k"/>
+                            <constraint firstItem="UKa-9R-Kfb" firstAttribute="centerY" secondItem="B3j-1b-UkJ" secondAttribute="centerY" id="ira-3d-NGt"/>
                             <constraint firstItem="NT0-MS-7UU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o8i-gH-z4s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NT0-MS-7UU" secondAttribute="trailing" constant="20" id="qSQ-fH-rfs"/>
                             <constraint firstItem="B3j-1b-UkJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tx9-Q6-1yJ"/>
@@ -96,6 +119,7 @@
                     <connections>
                         <outlet property="gameImage" destination="smS-YN-U3g" id="qlL-5L-uQ9"/>
                         <outlet property="horisontalGameObjectLayout" destination="Jqh-KZ-rHn" id="DVh-H2-h4e"/>
+                        <outlet property="scoreLabel" destination="sdC-6D-cFM" id="K2G-u3-FZy"/>
                         <outlet property="startStopButton" destination="Mgb-c6-cqA" id="ZzI-j5-7vL"/>
                         <outlet property="stepper" destination="B3j-1b-UkJ" id="Ryh-16-IVh"/>
                         <outlet property="timerLabel" destination="FqY-ZC-BjT" id="5xd-2f-Rag"/>
@@ -104,8 +128,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="m2r-KZ-wI5">
+                    <connections>
+                        <action selector="gameObjectTapped:" destination="BYZ-38-t0r" id="0NO-6h-Zgp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.875" y="88.75"/>
+            <point key="canvasLocation" x="136.23188405797103" y="88.043478260869577"/>
         </scene>
     </scenes>
     <resources>

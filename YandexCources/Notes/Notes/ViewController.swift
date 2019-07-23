@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var withImageView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var gameImage: UIImageView!
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
     
     private var moveImageTime: TimeInterval = 2
     private var moveGameObjectTimer: Timer?
+    
+    private var gameScore: Int = 0
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
         timerLabel.text = String("Game time \(Int(sender.value)) sec")
@@ -45,6 +48,11 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func gameObjectTapped(_ sender: UITapGestureRecognizer) {
+        moveGameObjectWithTimer()
+    }
+    
     func startGame() {
         gameTimeLeft = stepper.value
         timerLabel.text = "\(Int(gameTimeLeft)) sec left"
@@ -53,16 +61,25 @@ class ViewController: UIViewController {
         gameTimer?.invalidate()
         gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
         
-        //Configurate timer for move object with certain Time
-        moveGameObjectTimer?.invalidate()
-        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
-        moveGameObjectTimer?.fire()
+        moveGameObjectWithTimer()
         
+        gameScore = 0
+        gameImage.isUserInteractionEnabled = true
         isGameActive = true
         stepper.isEnabled = false
         
         //Rename general button for reuse
         startStopButton.setTitle("Pause", for: .normal)
+    }
+    
+    //Configurate timer for move object with certain Time
+    func moveGameObjectWithTimer() {
+        moveGameObjectTimer?.invalidate()
+        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
+        moveGameObjectTimer?.fire()
+        
+        gameScore += 1
+        scoreLabel.text = String(gameScore)
     }
     
     //Update left time, or end game
@@ -90,6 +107,7 @@ class ViewController: UIViewController {
         gameTimer?.invalidate()
         moveGameObjectTimer?.invalidate()
         
+        gameImage.isUserInteractionEnabled = false
         isGamePaused = true
         isGameActive = false
         
@@ -102,6 +120,7 @@ class ViewController: UIViewController {
         moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
         moveGameObjectTimer?.fire()
         
+        gameImage.isUserInteractionEnabled = true
         isGameActive = true
         isGamePaused = false
         
@@ -114,6 +133,7 @@ class ViewController: UIViewController {
         moveGameObjectTimer?.invalidate()
         gameTimeLeft = 0
         
+        gameImage.isUserInteractionEnabled = false
         isGameActive = false
         isGamePaused = false
         
