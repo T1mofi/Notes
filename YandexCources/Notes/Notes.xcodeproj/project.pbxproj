@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071F986522E74C3A004A8DF3 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F986422E74C3A004A8DF3 /* GameFieldView.swift */; };
 		07211F9222D888EE00D8E0CE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07211F9122D888EE00D8E0CE /* UIViewExtension.swift */; };
 		072227E322C92F9100323738 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072227E222C92F9100323738 /* FileNotebook.swift */; };
 		07270D7622D2B96E00FC4432 /* NoteExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07270D7522D2B96E00FC4432 /* NoteExtensionTests.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071F986422E74C3A004A8DF3 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 		07211F9122D888EE00D8E0CE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		072227E222C92F9100323738 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		07270D7322D2B96E00FC4432 /* NoteExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				07E7664A22BBF934009E1019 /* Main.storyboard */,
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
 				07211F9122D888EE00D8E0CE /* UIViewExtension.swift */,
+				071F986422E74C3A004A8DF3 /* GameFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				07211F9222D888EE00D8E0CE /* UIViewExtension.swift in Sources */,
 				072227E322C92F9100323738 /* FileNotebook.swift in Sources */,
 				07E7664922BBF934009E1019 /* ViewController.swift in Sources */,
+				071F986522E74C3A004A8DF3 /* GameFieldView.swift in Sources */,
 				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,

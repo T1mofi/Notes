@@ -24,26 +24,9 @@
                                     <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="A7S-9G-piP"/>
                                 </connections>
                             </stepper>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT0-MS-7UU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT0-MS-7UU" customClass="GameFieldView" customModule="Notes" customModuleProvider="target">
                                 <rect key="frame" x="20" y="149" width="280" height="337"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="smS-YN-U3g" userLabel="gameImage">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="7uv-2C-pTZ"/>
-                                            <constraint firstAttribute="width" constant="80" id="cOS-pX-ME8"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="m2r-KZ-wI5" appends="YES" id="tbu-lf-OZe"/>
-                                        </connections>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="smS-YN-U3g" firstAttribute="leading" secondItem="NT0-MS-7UU" secondAttribute="leading" id="Jqh-KZ-rHn"/>
-                                    <constraint firstItem="smS-YN-U3g" firstAttribute="top" secondItem="NT0-MS-7UU" secondAttribute="top" id="MTa-3m-s5T"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="15"/>
@@ -117,13 +100,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="gameImage" destination="smS-YN-U3g" id="qlL-5L-uQ9"/>
-                        <outlet property="horisontalGameObjectLayout" destination="Jqh-KZ-rHn" id="DVh-H2-h4e"/>
                         <outlet property="scoreLabel" destination="sdC-6D-cFM" id="K2G-u3-FZy"/>
                         <outlet property="startStopButton" destination="Mgb-c6-cqA" id="ZzI-j5-7vL"/>
                         <outlet property="stepper" destination="B3j-1b-UkJ" id="Ryh-16-IVh"/>
                         <outlet property="timerLabel" destination="FqY-ZC-BjT" id="5xd-2f-Rag"/>
-                        <outlet property="verticalGameObjectLayout" destination="MTa-3m-s5T" id="xsg-bJ-xD7"/>
                         <outlet property="withImageView" destination="NT0-MS-7UU" id="Yhv-fb-ho9"/>
                     </connections>
                 </viewController>
@@ -137,7 +117,4 @@
             <point key="canvasLocation" x="136.23188405797103" y="88.043478260869577"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="LaunchScreen" width="240" height="240"/>
-    </resources>
 </document>
