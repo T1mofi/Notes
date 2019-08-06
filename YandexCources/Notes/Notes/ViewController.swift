@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     private var gameTimeLeft: TimeInterval = 0
     private var gameTimer: Timer?
     
-    private var moveImageTime: TimeInterval = 2
+    private var moveGameObjectTime: TimeInterval = 2
     private var moveGameObjectTimer: Timer?
     
     private var gameScore: Int = 0
@@ -46,55 +46,59 @@ class ViewController: UIViewController {
     
     
     func startGame() {
-//        gameTimeLeft = stepper.value
-//        timerLabel.text = "\(Int(gameTimeLeft)) sec left"
-//
-//        //Configurate main game timer
-//        gameTimer?.invalidate()
-//        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
-//
-//        moveGameObjectWithTimer()
-//
-//        gameScore = 0
+        gameTimeLeft = stepper.value
+        timerLabel.text = "\(Int(gameTimeLeft)) sec left"
+
+        //Configurate main game timer
+        gameTimer?.invalidate()
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
+
+        moveGameObjectWithTimer()
+
+        gameScore = 0
+        // TODO: update this when do updateUI method
+        scoreLabel.text = String(gameScore)
 //        gameImage.isUserInteractionEnabled = true
-//        isGameActive = true
-//        stepper.isEnabled = false
-//
-//        //Rename general button for reuse
-//        startStopButton.setTitle("Pause", for: .normal)
+        isGameActive = true
+        stepper.isEnabled = false
+
+        //Rename general button for reuse
+        startStopButton.setTitle("Pause", for: .normal)
+    }
+    
+    
+    //Update left time, or end game
+    @objc private func gameTimerTick() {
+        
+        gameTimeLeft -= 1
+        
+        if gameTimeLeft > 0 {
+            timerLabel.text = "\(Int(gameTimeLeft)) sec left"
+        } else {
+            stopGame()
+        }
     }
 
+
     //Configurate timer for move object with certain Time
-//    func moveGameObjectWithTimer() {
-//        moveGameObjectTimer?.invalidate()
-//        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
-//        moveGameObjectTimer?.fire()
-//
-//        gameScore += 1
-//        scoreLabel.text = String(gameScore)
-//    }
-//
-//    //Update left time, or end game
-//    @objc private func gameTimerTick() {
-//
-//        gameTimeLeft -= 1
-//
-//        if gameTimeLeft > 0 {
-//            timerLabel.text = "\(Int(gameTimeLeft)) sec left"
-//        } else {
-//            stopGame()
-//        }
-//    }
-//
-//    //Move game object within the field
-//    @objc private func moveGameObject() {
+    func moveGameObjectWithTimer() {
+        moveGameObjectTimer?.invalidate()
+        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveGameObjectTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
+        moveGameObjectTimer?.fire()
+
+        gameScore += 1
+        scoreLabel.text = String(gameScore)
+    }
+
+    //Move game object within the field
+    @objc private func moveGameObject() {
 //        let maxHorisontalOffcet = withImageView.bounds.maxX - gameImage.frame.width
 //        let maxVerticalOffcet = withImageView.bounds.maxY - gameImage.frame.height
 //
 //        horisontalGameObjectLayout.constant = CGFloat(arc4random_uniform(UInt32(maxHorisontalOffcet)))
 //        verticalGameObjectLayout.constant = CGFloat(arc4random_uniform(UInt32(maxVerticalOffcet)))
-//    }
-//
+    }
+
     private func pauseGame() {
 //        gameTimer?.invalidate()
 //        moveGameObjectTimer?.invalidate()
@@ -109,7 +113,7 @@ class ViewController: UIViewController {
 
     private func resumeGame() {
 //        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
-//        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
+//        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveGameObjectTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
 //        moveGameObjectTimer?.fire()
 //
 //        gameImage.isUserInteractionEnabled = true
