@@ -59,6 +59,8 @@ class ViewController: UIViewController {
         // TODO: update this when do updateUI method
         scoreLabel.text = String(gameScore)
 //        gameImage.isUserInteractionEnabled = true
+        gameFieldView.isObjectHidden = false
+        
         isGameActive = true
         stepper.isEnabled = false
 
@@ -92,11 +94,8 @@ class ViewController: UIViewController {
 
     //Move game object within the field
     @objc private func moveGameObject() {
-//        let maxHorisontalOffcet = withImageView.bounds.maxX - gameImage.frame.width
-//        let maxVerticalOffcet = withImageView.bounds.maxY - gameImage.frame.height
-//
-//        horisontalGameObjectLayout.constant = CGFloat(arc4random_uniform(UInt32(maxHorisontalOffcet)))
-//        verticalGameObjectLayout.constant = CGFloat(arc4random_uniform(UInt32(maxVerticalOffcet)))
+        print("run changeObjectPosition")
+        gameFieldView.changeObjectPosition()
     }
 
     private func pauseGame() {
