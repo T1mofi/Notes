@@ -10,15 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
+    @IBOutlet weak var gameFieldView: GameFieldView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var startStopButton: UIButton!
-    @IBOutlet weak var gameImage: UIImageView!
-    
-    @IBOutlet weak var verticalGameObjectLayout: NSLayoutConstraint!
-    @IBOutlet weak var horisontalGameObjectLayout: NSLayoutConstraint!
     
     private var isGameActive: Bool = false
     private var isGamePaused: Bool = false
@@ -37,23 +33,19 @@ class ViewController: UIViewController {
     
     //One button have different usage scenarios
     @IBAction func startStopButtonClicked(_ sender: Any) {
-//        if isGameActive == true {
-//            pauseGame()
-//        } else {
-//            if isGamePaused == true {
-//                resumeGame()
-//            } else {
-//                startGame()
-//            }
-//        }
+        if isGameActive == true {
+            pauseGame()
+        } else {
+            if isGamePaused == true {
+                resumeGame()
+            } else {
+                startGame()
+            }
+        }
     }
     
     
-    @IBAction func gameObjectTapped(_ sender: UITapGestureRecognizer) {
-//        moveGameObjectWithTimer()
-    }
-    
-//    func startGame() {
+    func startGame() {
 //        gameTimeLeft = stepper.value
 //        timerLabel.text = "\(Int(gameTimeLeft)) sec left"
 //
@@ -70,9 +62,9 @@ class ViewController: UIViewController {
 //
 //        //Rename general button for reuse
 //        startStopButton.setTitle("Pause", for: .normal)
-//    }
-//
-//    //Configurate timer for move object with certain Time
+    }
+
+    //Configurate timer for move object with certain Time
 //    func moveGameObjectWithTimer() {
 //        moveGameObjectTimer?.invalidate()
 //        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
@@ -103,7 +95,7 @@ class ViewController: UIViewController {
 //        verticalGameObjectLayout.constant = CGFloat(arc4random_uniform(UInt32(maxVerticalOffcet)))
 //    }
 //
-//    private func pauseGame() {
+    private func pauseGame() {
 //        gameTimer?.invalidate()
 //        moveGameObjectTimer?.invalidate()
 //
@@ -113,9 +105,9 @@ class ViewController: UIViewController {
 //
 //        //Rename general button for reuse
 //        startStopButton.setTitle("Resume", for: .normal)
-//    }
-//
-//    private func resumeGame() {
+    }
+
+    private func resumeGame() {
 //        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
 //        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveImageTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
 //        moveGameObjectTimer?.fire()
@@ -126,9 +118,9 @@ class ViewController: UIViewController {
 //
 //        //Rename general button for reuse
 //        startStopButton.setTitle("Pause", for: .normal)
-//    }
-//
-//    private func stopGame() {
+    }
+
+    private func stopGame() {
 //        gameTimer?.invalidate()
 //        moveGameObjectTimer?.invalidate()
 //        gameTimeLeft = 0
@@ -140,7 +132,7 @@ class ViewController: UIViewController {
 //        stepper.isEnabled = true
 //        timerLabel.text = "Time left"
 //        startStopButton.setTitle("Restart", for: .normal)
-//    }
+    }
     
     
 

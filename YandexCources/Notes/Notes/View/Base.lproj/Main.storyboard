@@ -89,6 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="gameFieldView" destination="gMg-6R-knL" id="Y63-65-Vp2"/>
                         <outlet property="scoreLabel" destination="sdC-6D-cFM" id="K2G-u3-FZy"/>
                         <outlet property="startStopButton" destination="Mgb-c6-cqA" id="ZzI-j5-7vL"/>
                         <outlet property="stepper" destination="B3j-1b-UkJ" id="Ryh-16-IVh"/>
@@ -96,11 +97,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="m2r-KZ-wI5">
-                    <connections>
-                        <action selector="gameObjectTapped:" destination="BYZ-38-t0r" id="0NO-6h-Zgp"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="88.043478260869577"/>
         </scene>
