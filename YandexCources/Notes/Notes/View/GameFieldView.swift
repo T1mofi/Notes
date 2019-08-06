@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class CustomView: UIView {
+class GameFieldView: UIView {
     
     @IBInspectable var objectColor: UIColor = .blue
     @IBInspectable var objectPosition: CGPoint = .zero
@@ -21,7 +21,6 @@ class CustomView: UIView {
         
         print("draw")
         
-    
         let rectangle = getRectanglePath(in: CGRect(origin: objectPosition, size: objectSize))
     }
     

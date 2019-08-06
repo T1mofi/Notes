@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-//    @IBOutlet weak var withImageView: GameFieldView!
+
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!

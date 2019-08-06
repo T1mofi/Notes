@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		07211F9222D888EE00D8E0CE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07211F9122D888EE00D8E0CE /* UIViewExtension.swift */; };
 		072227E322C92F9100323738 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072227E222C92F9100323738 /* FileNotebook.swift */; };
-		0722301A22F97B5B00460AD4 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722301922F97B5B00460AD4 /* CustomView.swift */; };
+		0722301C22F981BD00460AD4 /* GameFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0722301B22F981BD00460AD4 /* GameFieldView.swift */; };
 		07270D7622D2B96E00FC4432 /* NoteExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07270D7522D2B96E00FC4432 /* NoteExtensionTests.swift */; };
 		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
 		07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664622BBF934009E1019 /* AppDelegate.swift */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		07211F9122D888EE00D8E0CE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		072227E222C92F9100323738 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
-		0722301922F97B5B00460AD4 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		0722301B22F981BD00460AD4 /* GameFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFieldView.swift; sourceTree = "<group>"; };
 		07270D7322D2B96E00FC4432 /* NoteExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07270D7522D2B96E00FC4432 /* NoteExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtensionTests.swift; sourceTree = "<group>"; };
 		07270D7722D2B96E00FC4432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 			children = (
 				07E7664A22BBF934009E1019 /* Main.storyboard */,
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
-				0722301922F97B5B00460AD4 /* CustomView.swift */,
 				07211F9122D888EE00D8E0CE /* UIViewExtension.swift */,
+				0722301B22F981BD00460AD4 /* GameFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,10 +301,10 @@
 				07211F9222D888EE00D8E0CE /* UIViewExtension.swift in Sources */,
 				072227E322C92F9100323738 /* FileNotebook.swift in Sources */,
 				07E7664922BBF934009E1019 /* ViewController.swift in Sources */,
-				0722301A22F97B5B00460AD4 /* CustomView.swift in Sources */,
 				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,
+				0722301C22F981BD00460AD4 /* GameFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
