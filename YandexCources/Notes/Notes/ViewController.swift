@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private var gameTimeLeft: TimeInterval = 0
+    private var gameTimer: Timer?
+    private var moveGameObjectTimer: Timer?
+    
     @IBOutlet weak var gameFieldView: GameFieldView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -19,16 +23,11 @@ class ViewController: UIViewController {
     private var isGameActive: Bool = false
     private var isGamePaused: Bool = false
     
-    private var gameTimeLeft: TimeInterval = 0
-    private var gameTimer: Timer?
-    
-    private var moveGameObjectTime: TimeInterval = 2
-    private var moveGameObjectTimer: Timer?
-    
     private var gameScore: Int = 0
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
         timerLabel.text = String("Game time \(Int(sender.value)) sec")
+        gameTimeLeft = sender.value
     }
     
     //One button have different usage scenarios
@@ -44,34 +43,160 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    func startGame() {
-        gameTimeLeft = stepper.value
-        timerLabel.text = "\(Int(gameTimeLeft)) sec left"
-
-        //Configurate main game timer
-        gameTimer?.invalidate()
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
-
-        moveGameObjectWithTimer()
-
-        gameScore = 0
-        // TODO: update this when do updateUI method
-        scoreLabel.text = String(gameScore)
-//        gameImage.isUserInteractionEnabled = true
-        gameFieldView.isObjectHidden = false
+    func gameObjectTapped() {
+        guard isGameActive else { return }
         
-        isGameActive = true
-        stepper.isEnabled = false
-
-        //Rename general button for reuse
-        startStopButton.setTitle("Pause", for: .normal)
+        gameScore += 1
+        moveGameObjectWithTimer()
+    }
+    
+    func updateUI() {
+        stepper.isEnabled = !isGameActive
+        gameFieldView.isObjectHidden = !isGameActive
+        scoreLabel.text = String(gameScore)
+        
+        if isGameActive == true {
+            startStopButton.setTitle("Pause", for: .normal)
+        } else {
+            if isGamePaused == true {
+                startStopButton.setTitle("Resume", for: .normal)
+            } else {
+                gameTimeLeft = stepper.value
+                timerLabel.text = "\(Int(gameTimeLeft)) sec left"
+                startStopButton.setTitle("Start", for: .normal)
+            }
+        }
     }
     
     
+    func startGame() {
+        isGameActive = true
+        
+        //Configurate main game timer
+        gameTimer?.invalidate()
+        runGameTimer()
+
+        //start moving object
+        moveGameObjectWithTimer()
+
+        gameScore = 0
+        
+        updateUI()
+    }
+    
+    private func pauseGame() {
+        isGamePaused = true
+        isGameActive = false
+        
+        gameTimer?.invalidate()
+        moveGameObjectTimer?.invalidate()
+    
+        updateUI()
+    }
+    
+    private func resumeGame() {
+        isGameActive = true
+        isGamePaused = false
+        
+        runGameTimer()
+        runMoveGameObjectTimer()
+        moveGameObjectTimer?.fire()
+
+        updateUI()
+    }
+    
+    private func stopGame() {
+        isGameActive = false
+        isGamePaused = false
+        
+        gameTimer?.invalidate()
+        moveGameObjectTimer?.invalidate()
+        gameTimeLeft = 0
+        
+        updateUI()
+    }
+
+    //Configurate timer for move object with certain Time
+    func moveGameObjectWithTimer() {
+        moveGameObjectTimer?.invalidate()
+        runMoveGameObjectTimer()
+        moveGameObjectTimer?.fire()
+
+//        gameScore += 1
+        scoreLabel.text = String(gameScore)
+    }
+
+    ///////////////////////////////////////
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        gameFieldView.layer.borderWidth = 1
+        gameFieldView.layer.cornerRadius = 5
+        gameFieldView.layer.borderColor = UIColor.black.cgColor
+        
+        gameFieldView.objectHitHandler = { [weak self] in self?.gameObjectTapped()}
+        
+        updateUI()
+        
+        // Do any additional setup after loading the view.
+
+//        let note:Note = Note(
+//            title: "MyTitle",
+//            content: "MyContent",
+//            color: UIColor.yellow,
+//            importance: .important,
+//            selfDestructionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
+//
+//        let note2:Note = Note(
+//            title: "MyTitle",
+//            content: "MyContent",
+//            color: UIColor.yellow,
+//            importance: .important,
+//            selfDestructionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
+//
+//
+//        print(note.json)
+//        print("Note json\n")
+//
+//        let noteFromJSON = Note.parse(json: note.json)
+//        print(noteFromJSON?.json ?? "nil")
+//        print("noteFromJSON json\n")
+//
+//
+//        let notebook = FileNotebook()
+//
+//        notebook.add(note)
+//        notebook.add(note2)
+//
+//        notebook.saveToFile()
+//
+//        for key in notebook.notes.keys {
+//            notebook.remove(with: key)
+//        }
+//
+//        notebook.loadFromFile()
+    }
+}
+
+extension ViewController {
+    private func runGameTimer() {
+        gameTimer = Timer.scheduledTimer(timeInterval: 1,
+                                         target: self,
+                                         selector: #selector(gameTimerTick),
+                                         userInfo: nil,
+                                         repeats: true)
+    }
+    
+    private func runMoveGameObjectTimer() {
+        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: 2,
+                                                   target: self,
+                                                   selector: #selector(moveGameObject),
+                                                   userInfo: nil,
+                                                   repeats: true)
+    }
+
     //Update left time, or end game
     @objc private func gameTimerTick() {
-        
         gameTimeLeft -= 1
         
         if gameTimeLeft > 0 {
@@ -80,112 +205,12 @@ class ViewController: UIViewController {
             stopGame()
         }
     }
-
-
-    //Configurate timer for move object with certain Time
-    func moveGameObjectWithTimer() {
-        moveGameObjectTimer?.invalidate()
-        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveGameObjectTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
-        moveGameObjectTimer?.fire()
-
-        gameScore += 1
-        scoreLabel.text = String(gameScore)
-    }
-
+    
     //Move game object within the field
     @objc private func moveGameObject() {
         print("run changeObjectPosition")
         gameFieldView.changeObjectPosition()
     }
-
-    private func pauseGame() {
-//        gameTimer?.invalidate()
-//        moveGameObjectTimer?.invalidate()
-//
-//        gameImage.isUserInteractionEnabled = false
-//        isGamePaused = true
-//        isGameActive = false
-//
-//        //Rename general button for reuse
-//        startStopButton.setTitle("Resume", for: .normal)
-    }
-
-    private func resumeGame() {
-//        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(gameTimerTick), userInfo: nil, repeats: true)
-//        moveGameObjectTimer = Timer.scheduledTimer(timeInterval: moveGameObjectTime, target: self, selector: #selector(moveGameObject), userInfo: nil, repeats: true)
-//        moveGameObjectTimer?.fire()
-//
-//        gameImage.isUserInteractionEnabled = true
-//        isGameActive = true
-//        isGamePaused = false
-//
-//        //Rename general button for reuse
-//        startStopButton.setTitle("Pause", for: .normal)
-    }
-
-    private func stopGame() {
-//        gameTimer?.invalidate()
-//        moveGameObjectTimer?.invalidate()
-//        gameTimeLeft = 0
-//
-//        gameImage.isUserInteractionEnabled = false
-//        isGameActive = false
-//        isGamePaused = false
-//
-//        stepper.isEnabled = true
-//        timerLabel.text = "Time left"
-//        startStopButton.setTitle("Restart", for: .normal)
-    }
     
-    
-
-    
-    
-    
-    
-    
-    ///////////////////////////////////////
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-        let note:Note = Note(
-            title: "MyTitle",
-            content: "MyContent",
-            color: UIColor.yellow,
-            importance: .important,
-            selfDestructionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
-        
-        let note2:Note = Note(
-            title: "MyTitle",
-            content: "MyContent",
-            color: UIColor.yellow,
-            importance: .important,
-            selfDestructionDate: Calendar.current.date(byAdding: .day, value: 7, to: Date()))
-        
-    
-        print(note.json)
-        print("Note json\n")
-        
-        let noteFromJSON = Note.parse(json: note.json)
-        print(noteFromJSON?.json ?? "nil")
-        print("noteFromJSON json\n")
-        
-    
-        let notebook = FileNotebook()
-        
-        notebook.add(note)
-        notebook.add(note2)
-        
-        notebook.saveToFile()
-        
-        for key in notebook.notes.keys {
-            notebook.remove(with: key)
-        }
-        
-        notebook.loadFromFile()
-
-
-    }
 }
 

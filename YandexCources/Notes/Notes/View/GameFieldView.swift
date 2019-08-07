@@ -6,7 +6,6 @@
 //  Copyright © 2019 SikorskiIT. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 @IBDesignable
@@ -24,17 +23,36 @@ class GameFieldView: UIView {
     @IBInspectable var isObjectHidden: Bool = true {
         didSet { setNeedsDisplay() }
     }
+    private var currentPath: UIBezierPath?
+    var objectHitHandler: (() -> Void)?
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
         print("draw")
         
-        guard !isObjectHidden else { return }
+        guard !isObjectHidden else {
+            currentPath = nil
+            return
+        }
         
         let rectangle = getRectanglePath(in: CGRect(origin: objectPosition, size: objectSize))
         
-        rectangle.fill()
+        currentPath = rectangle
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        guard let path = currentPath else { return }
+        
+        let hit = touches.contains(where: { touch -> Bool in
+            let touchPoint = touch.location(in: self)
+            return path.contains(touchPoint)
+        })
+        if hit {
+            objectHitHandler?()
+        }
     }
     
     func changeObjectPosition() {
