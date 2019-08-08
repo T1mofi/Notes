@@ -18,18 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="60" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="B3j-1b-UkJ">
-                                <rect key="frame" x="113" y="50" width="94" height="29"/>
-                                <connections>
-                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="A7S-9G-piP"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game time 20 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqY-ZC-BjT" userLabel="counter">
-                                <rect key="frame" x="62" y="99" width="196" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mgb-c6-cqA" userLabel="startStopButton">
                                 <rect key="frame" x="131" y="506" width="58" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -49,24 +37,7 @@
                                     <action selector="startStopButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QLf-KD-PWf"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-9R-Kfb" userLabel="ScoreStackView">
-                                <rect key="frame" x="50" y="42.5" width="44.5" height="44.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-tr-bSm" userLabel="ScoreLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-6D-cFM" userLabel="ScoreValueLabel">
-                                        <rect key="frame" x="0.0" y="20.5" width="44.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-6R-knL" customClass="GameFieldView" customModule="Notes" customModuleProvider="target">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-6R-knL" customClass="GameFieldView" customModule="Notes" customModuleProvider="target">
                                 <rect key="frame" x="20" y="149" width="280" height="337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -81,16 +52,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UKa-9R-Kfb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="3gF-Qp-OWb"/>
-                            <constraint firstItem="FqY-ZC-BjT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BJC-yt-ba3"/>
                             <constraint firstItem="Mgb-c6-cqA" firstAttribute="top" secondItem="gMg-6R-knL" secondAttribute="bottom" constant="20" id="T7D-5V-gW6"/>
                             <constraint firstItem="Mgb-c6-cqA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Urb-cP-WRf"/>
-                            <constraint firstItem="FqY-ZC-BjT" firstAttribute="top" secondItem="B3j-1b-UkJ" secondAttribute="bottom" constant="20" id="Zkc-Le-c3k"/>
-                            <constraint firstItem="UKa-9R-Kfb" firstAttribute="centerY" secondItem="B3j-1b-UkJ" secondAttribute="centerY" id="ira-3d-NGt"/>
-                            <constraint firstItem="gMg-6R-knL" firstAttribute="top" secondItem="FqY-ZC-BjT" secondAttribute="bottom" constant="20" id="j4i-Th-xBa"/>
                             <constraint firstItem="gMg-6R-knL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qeh-03-38R"/>
-                            <constraint firstItem="B3j-1b-UkJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tx9-Q6-1yJ"/>
-                            <constraint firstItem="B3j-1b-UkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="viW-OD-8bZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gMg-6R-knL" secondAttribute="trailing" constant="20" id="zQ7-c9-eFv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mgb-c6-cqA" secondAttribute="bottom" constant="20" id="zgo-ma-xxw"/>
                         </constraints>
@@ -98,10 +62,7 @@
                     </view>
                     <connections>
                         <outlet property="gameFieldView" destination="gMg-6R-knL" id="Y63-65-Vp2"/>
-                        <outlet property="scoreLabel" destination="sdC-6D-cFM" id="K2G-u3-FZy"/>
                         <outlet property="startStopButton" destination="Mgb-c6-cqA" id="ZzI-j5-7vL"/>
-                        <outlet property="stepper" destination="B3j-1b-UkJ" id="Ryh-16-IVh"/>
-                        <outlet property="timerLabel" destination="FqY-ZC-BjT" id="5xd-2f-Rag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
