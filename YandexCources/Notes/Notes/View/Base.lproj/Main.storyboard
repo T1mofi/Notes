@@ -37,8 +37,8 @@
                                     <action selector="startStopButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QLf-KD-PWf"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-6R-knL" customClass="GameFieldView" customModule="Notes" customModuleProvider="target">
-                                <rect key="frame" x="20" y="149" width="280" height="337"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-6R-knL" customClass="GameFieldView" customModule="Notes" customModuleProvider="target">
+                                <rect key="frame" x="20" y="129" width="280" height="357"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -49,9 +49,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-wx-mdv" customClass="GameControlView" customModule="Notes" customModuleProvider="target">
+                                <rect key="frame" x="10" y="30" width="300" height="89"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="DjJ-wx-mdv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Cl6-n1-uBY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DjJ-wx-mdv" secondAttribute="trailing" constant="10" id="Enr-Jd-hZr"/>
+                            <constraint firstItem="gMg-6R-knL" firstAttribute="top" secondItem="DjJ-wx-mdv" secondAttribute="bottom" constant="10" id="HoW-vO-2WK"/>
+                            <constraint firstItem="DjJ-wx-mdv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PZr-dF-dDO"/>
                             <constraint firstItem="Mgb-c6-cqA" firstAttribute="top" secondItem="gMg-6R-knL" secondAttribute="bottom" constant="20" id="T7D-5V-gW6"/>
                             <constraint firstItem="Mgb-c6-cqA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Urb-cP-WRf"/>
                             <constraint firstItem="gMg-6R-knL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qeh-03-38R"/>
@@ -67,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="88.043478260869577"/>
+            <point key="canvasLocation" x="135" y="87.676056338028175"/>
         </scene>
     </scenes>
 </document>

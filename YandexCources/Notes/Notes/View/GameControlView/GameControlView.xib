@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameControlView" customModule="Notes" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="347" height="107"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="60" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1s2-KK-qVV">
+                    <rect key="frame" x="126.5" y="10" width="94" height="29"/>
+                </stepper>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game time 20 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIH-Qf-ODS" userLabel="counter">
+                    <rect key="frame" x="75.5" y="59" width="196" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e11-mL-lx5" userLabel="ScoreStackView">
+                    <rect key="frame" x="52" y="2.5" width="44.5" height="44.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0E-Sz-I7J" userLabel="ScoreLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHO-08-77K" userLabel="ScoreValueLabel">
+                            <rect key="frame" x="0.0" y="20.5" width="44.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1s2-KK-qVV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="DaD-wB-je7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CIH-Qf-ODS" secondAttribute="bottom" id="HvU-mk-SkU"/>
+                <constraint firstItem="CIH-Qf-ODS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RZK-2O-yXg"/>
+                <constraint firstItem="1s2-KK-qVV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SAM-1Z-kX6"/>
+                <constraint firstItem="CIH-Qf-ODS" firstAttribute="top" secondItem="1s2-KK-qVV" secondAttribute="bottom" constant="20" id="abn-mC-zSK"/>
+                <constraint firstItem="1s2-KK-qVV" firstAttribute="centerY" secondItem="e11-mL-lx5" secondAttribute="centerY" id="opF-OK-dLs"/>
+                <constraint firstItem="1s2-KK-qVV" firstAttribute="leading" secondItem="e11-mL-lx5" secondAttribute="trailing" constant="30" id="s2e-Je-ems"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="114.40000000000001" y="-196.55172413793105"/>
+        </view>
+    </objects>
+</document>
