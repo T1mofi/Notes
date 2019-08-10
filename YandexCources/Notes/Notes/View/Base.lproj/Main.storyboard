@@ -69,6 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="gameControlView" destination="DjJ-wx-mdv" id="oyh-rY-Ivi"/>
                         <outlet property="gameFieldView" destination="gMg-6R-knL" id="Y63-65-Vp2"/>
                         <outlet property="startStopButton" destination="Mgb-c6-cqA" id="ZzI-j5-7vL"/>
                     </connections>

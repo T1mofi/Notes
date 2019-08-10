@@ -11,6 +11,15 @@ import UIKit
 
 @IBDesignable
 class GameControlView: UIView {
+    
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var gameTimeLabel: UILabel!
+
+    @IBAction func stepperChanged(_ sender: UIStepper) {
+        gameTimeLabel.text = "Game time \(Int(sender.value)) sec"
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()

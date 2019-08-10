@@ -10,7 +10,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameControlView" customModule="Notes" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameControlView" customModule="Notes" customModuleProvider="target">
+            <connections>
+                <outlet property="gameTimeLabel" destination="CIH-Qf-ODS" id="fAa-xo-IVD"/>
+                <outlet property="scoreLabel" destination="nHO-08-77K" id="9iI-HV-Cge"/>
+                <outlet property="stepper" destination="1s2-KK-qVV" id="DKA-T4-fiq"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="347" height="107"/>
@@ -18,8 +24,11 @@
             <subviews>
                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" maximumValue="60" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1s2-KK-qVV">
                     <rect key="frame" x="126.5" y="10" width="94" height="29"/>
+                    <connections>
+                        <action selector="stepperChanged:" destination="-1" eventType="valueChanged" id="g8G-El-JXU"/>
+                    </connections>
                 </stepper>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game time 20 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIH-Qf-ODS" userLabel="counter">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game time 20 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIH-Qf-ODS" userLabel="GameTimeLabel">
                     <rect key="frame" x="75.5" y="59" width="196" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <nil key="textColor"/>
@@ -55,7 +64,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="114.40000000000001" y="-196.55172413793105"/>
+            <point key="canvasLocation" x="73" y="-215"/>
         </view>
     </objects>
 </document>
