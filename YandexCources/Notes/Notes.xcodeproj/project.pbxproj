@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0720DEB92300721900EFCEC0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720DEB72300721900EFCEC0 /* SecondViewController.swift */; };
+		0720DEBA2300721900EFCEC0 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720DEB82300721900EFCEC0 /* SecondViewController.xib */; };
 		072227E322C92F9100323738 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072227E222C92F9100323738 /* FileNotebook.swift */; };
 		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
 		07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664622BBF934009E1019 /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0720DEB72300721900EFCEC0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		0720DEB82300721900EFCEC0 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		072227E222C92F9100323738 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		0728837622C3B57100380D3A /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		07E7664322BBF934009E1019 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +52,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0720DEB62300707000EFCEC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07E7664A22BBF934009E1019 /* Main.storyboard */,
+				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
+				0720DEB82300721900EFCEC0 /* SecondViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		072227E422C9695E00323738 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +95,10 @@
 			children = (
 				07E7664622BBF934009E1019 /* AppDelegate.swift */,
 				07E7664822BBF934009E1019 /* ViewController.swift */,
+				0720DEB72300721900EFCEC0 /* SecondViewController.swift */,
 				072227E422C9695E00323738 /* Model */,
-				07E7664A22BBF934009E1019 /* Main.storyboard */,
+				0720DEB62300707000EFCEC0 /* View */,
 				07E7664D22BBF936009E1019 /* Assets.xcassets */,
-				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
 				07E7665222BBF936009E1019 /* Info.plist */,
 			);
 			path = Notes;
@@ -98,7 +112,6 @@
 				EAA5804CF0CB361015A98A4B /* Pods-Notes.release.xcconfig */,
 				589BB7B47CE61FA07FC951FE /* Pods-Notes.release free.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0720DEBA2300721900EFCEC0 /* SecondViewController.xib in Resources */,
 				07E7665122BBF936009E1019 /* LaunchScreen.storyboard in Resources */,
 				07E7664E22BBF936009E1019 /* Assets.xcassets in Resources */,
 				07E7664C22BBF934009E1019 /* Main.storyboard in Resources */,
@@ -215,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0720DEB92300721900EFCEC0 /* SecondViewController.swift in Sources */,
 				072227E322C92F9100323738 /* FileNotebook.swift in Sources */,
 				07E7664922BBF934009E1019 /* ViewController.swift in Sources */,
 				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
