@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func showSecondViewController(_ sender: Any) {
-        let secondViewController = SecondViewController(nibName: "SecondViewController", bundle: nil)
+        let secondViewController = SecondViewController(viewNameLabel: "second view")
         
         present(secondViewController, animated: true, completion: nil)
         

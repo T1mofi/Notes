@@ -10,7 +10,21 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    let viewNameLabel: String
+    @IBOutlet weak var mainLabel: UILabel!
     
+    init(viewNameLabel: String) {
+        self.viewNameLabel = viewNameLabel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.viewNameLabel = "baseLabel"
+        
+        super.init(coder: aDecoder)
+    }
+
    
     @IBAction func closeButtonClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -19,6 +33,7 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mainLabel.text = viewNameLabel
         // Do any additional setup after loading the view.
     }
 
