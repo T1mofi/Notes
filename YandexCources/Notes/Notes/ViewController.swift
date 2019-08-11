@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var gameControlView: GameControlView!
     @IBOutlet weak var gameFieldView: GameFieldView!
+
     @IBOutlet weak var startStopButton: UIButton!
     
     private var isGameActive: Bool = false
@@ -99,7 +100,7 @@ class ViewController: UIViewController {
 
         updateUI()
     }
-    
+
     private func stopGame() {
         isGameActive = false
         isGamePaused = false
