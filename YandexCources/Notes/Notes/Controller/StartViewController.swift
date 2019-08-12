@@ -1,39 +1,35 @@
 //
-//  SecondViewController.swift
+//  StartViewController.swift
 //  Notes
 //
-//  Created by Timofei Sikorski on 8/11/19.
+//  Created by Timofei Sikorski on 8/12/19.
 //  Copyright © 2019 SikorskiIT. All rights reserved.
 //
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class StartViewController: UIViewController {
 
-    let viewNameLabel: String
-    @IBOutlet weak var mainLabel: UILabel!
-    
-    init(viewNameLabel: String) {
-        self.viewNameLabel = viewNameLabel
+    @IBAction func doctorControllerButtonClicked(_ sender: Any) {
         
-        super.init(nibName: nil, bundle: nil)
+        let doctorViewController = DoctorViewController()
+        
+        navigationController?.pushViewController(doctorViewController, animated: true)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        self.viewNameLabel = "baseLabel"
+    @IBAction func medicineControllerButtonClicked(_ sender: Any) {
         
-        super.init(coder: aDecoder)
+        let medicineViewController = MedicineViewController()
+        
+        navigationController?.pushViewController(medicineViewController, animated: true)
     }
-
-   
-    @IBAction func closeButtonClicked(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        mainLabel.text = viewNameLabel
+        
+        title = "Menu"
         // Do any additional setup after loading the view.
     }
 

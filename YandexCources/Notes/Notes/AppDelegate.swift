@@ -42,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Paid Version")
         }
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let startViewController = StartViewController()
+        let navigationController = UINavigationController(rootViewController: startViewController)
+        
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
