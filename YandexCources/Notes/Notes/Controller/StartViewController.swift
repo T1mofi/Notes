@@ -29,7 +29,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Menu"
+        title = "Doctors"
         // Do any additional setup after loading the view.
     }
 

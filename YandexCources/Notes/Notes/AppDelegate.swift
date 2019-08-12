@@ -42,11 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Paid Version")
         }
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let startViewController = StartViewController()
-        let navigationController = UINavigationController(rootViewController: startViewController)
+        //MARK: UI
         
-        window?.rootViewController = navigationController
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let startController = StartViewController()
+        let navigationController = UINavigationController(rootViewController: startController)
+        navigationController.tabBarItem = UITabBarItem(title: "Doctors", image: UIImage(named: "Doctor"), selectedImage: nil)
+        
+        let medicineController = MedicineViewController()
+        medicineController.tabBarItem = UITabBarItem(title: "Medicine", image: UIImage(named: "Medicine"), selectedImage: nil)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [navigationController, medicineController]
+        
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true

@@ -13,10 +13,10 @@
 		0720DEC62300CA8100EFCEC0 /* DoctorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720DEC42300CA8100EFCEC0 /* DoctorViewController.xib */; };
 		0720DEC9230156CB00EFCEC0 /* MedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720DEC7230156CB00EFCEC0 /* MedicineViewController.swift */; };
 		0720DECA230156CB00EFCEC0 /* MedicineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0720DEC8230156CB00EFCEC0 /* MedicineViewController.xib */; };
+		0720DECC2301680E00EFCEC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0720DECB2301680E00EFCEC0 /* Assets.xcassets */; };
 		072227E322C92F9100323738 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072227E222C92F9100323738 /* FileNotebook.swift */; };
 		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
 		07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664622BBF934009E1019 /* AppDelegate.swift */; };
-		07E7664E22BBF936009E1019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664D22BBF936009E1019 /* Assets.xcassets */; };
 		07E7665122BBF936009E1019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */; };
 		07E7665922BBF9D4009E1019 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7665822BBF9D4009E1019 /* Note.swift */; };
 		5117DF8049B54D2817F23BBB /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD38209FF2BCC43EADD1B6A /* libPods-Notes.a */; };
@@ -29,11 +29,11 @@
 		0720DEC42300CA8100EFCEC0 /* DoctorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorViewController.xib; sourceTree = "<group>"; };
 		0720DEC7230156CB00EFCEC0 /* MedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineViewController.swift; sourceTree = "<group>"; };
 		0720DEC8230156CB00EFCEC0 /* MedicineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineViewController.xib; sourceTree = "<group>"; };
+		0720DECB2301680E00EFCEC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072227E222C92F9100323738 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		0728837622C3B57100380D3A /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		07E7664322BBF934009E1019 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E7664622BBF934009E1019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07E7664D22BBF936009E1019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07E7665022BBF936009E1019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07E7665222BBF936009E1019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E7665822BBF9D4009E1019 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				0720DEBE2300C7E200EFCEC0 /* Controller */,
 				072227E422C9695E00323738 /* Model */,
 				0720DEB62300707000EFCEC0 /* View */,
-				07E7664D22BBF936009E1019 /* Assets.xcassets */,
+				0720DECB2301680E00EFCEC0 /* Assets.xcassets */,
 				07E7665222BBF936009E1019 /* Info.plist */,
 			);
 			path = Notes;
@@ -207,8 +207,8 @@
 				0720DEC62300CA8100EFCEC0 /* DoctorViewController.xib in Resources */,
 				07E7665122BBF936009E1019 /* LaunchScreen.storyboard in Resources */,
 				0720DECA230156CB00EFCEC0 /* MedicineViewController.xib in Resources */,
-				07E7664E22BBF936009E1019 /* Assets.xcassets in Resources */,
 				0720DEC22300C80000EFCEC0 /* StartViewController.xib in Resources */,
+				0720DECC2301680E00EFCEC0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
