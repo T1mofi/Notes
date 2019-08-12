@@ -19,9 +19,8 @@ class StartViewController: UIViewController {
     
     @IBAction func medicineControllerButtonClicked(_ sender: Any) {
         
-        let medicineViewController = MedicineViewController()
-        
-        navigationController?.pushViewController(medicineViewController, animated: true)
+        tabBarController?.selectedIndex = 1
+        tabBarController?.tabBar.backgroundColor = .black
     }
     
     
