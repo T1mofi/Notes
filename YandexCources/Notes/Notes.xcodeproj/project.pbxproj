@@ -48,6 +48,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0720DECF23018DE500EFCEC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07E7664A22BBF934009E1019 /* Main.storyboard */,
+				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0720DED023018DFE00EFCEC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				07E7664822BBF934009E1019 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		072227E422C9695E00323738 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +96,11 @@
 		07E7664522BBF934009E1019 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				07E7664622BBF934009E1019 /* AppDelegate.swift */,
-				07E7664822BBF934009E1019 /* ViewController.swift */,
+				0720DECF23018DE500EFCEC0 /* View */,
 				072227E422C9695E00323738 /* Model */,
-				07E7664A22BBF934009E1019 /* Main.storyboard */,
+				0720DED023018DFE00EFCEC0 /* Controller */,
 				07E7664D22BBF936009E1019 /* Assets.xcassets */,
-				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
+				07E7664622BBF934009E1019 /* AppDelegate.swift */,
 				07E7665222BBF936009E1019 /* Info.plist */,
 			);
 			path = Notes;
@@ -98,7 +114,6 @@
 				EAA5804CF0CB361015A98A4B /* Pods-Notes.release.xcconfig */,
 				589BB7B47CE61FA07FC951FE /* Pods-Notes.release free.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
