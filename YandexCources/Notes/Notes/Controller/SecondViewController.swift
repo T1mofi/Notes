@@ -17,8 +17,6 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
 
         mainLabel.text = text
-        
-        
         // Do any additional setup after loading the view.
     }
     
