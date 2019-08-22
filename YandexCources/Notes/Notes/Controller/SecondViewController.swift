@@ -20,6 +20,9 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func unwindToSecondScreen(segue: UIStoryboardSegue) {
+        
+    }
     
 
 

@@ -10,6 +10,7 @@
 		0720DED22301A64500EFCEC0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0720DED12301A64500EFCEC0 /* SecondViewController.swift */; };
 		072227E322C92F9100323738 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072227E222C92F9100323738 /* FileNotebook.swift */; };
 		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
+		0799DD8F230F0BF00077B8EA /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799DD8E230F0BF00077B8EA /* ScrollViewController.swift */; };
 		07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664622BBF934009E1019 /* AppDelegate.swift */; };
 		07E7664922BBF934009E1019 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664822BBF934009E1019 /* ViewController.swift */; };
 		07E7664C22BBF934009E1019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664A22BBF934009E1019 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		0720DED12301A64500EFCEC0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		072227E222C92F9100323738 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		0728837622C3B57100380D3A /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
+		0799DD8E230F0BF00077B8EA /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		07E7664322BBF934009E1019 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E7664622BBF934009E1019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E7664822BBF934009E1019 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				07E7664822BBF934009E1019 /* ViewController.swift */,
 				0720DED12301A64500EFCEC0 /* SecondViewController.swift */,
+				0799DD8E230F0BF00077B8EA /* ScrollViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				0720DED22301A64500EFCEC0 /* SecondViewController.swift in Sources */,
 				072227E322C92F9100323738 /* FileNotebook.swift in Sources */,
 				07E7664922BBF934009E1019 /* ViewController.swift in Sources */,
+				0799DD8F230F0BF00077B8EA /* ScrollViewController.swift in Sources */,
 				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,
