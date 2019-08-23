@@ -31,12 +31,12 @@ struct Note {
          importance: Importance = .normal,
          selfDestructionDate: Date? = nil)
     {
+        self.uid = uid
         self.title = title
         self.content = content
         self.color = color
         self.importance = importance
         self.selfDestructionDate = selfDestructionDate
-        self.uid = uid
     }
 }
 
