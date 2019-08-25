@@ -11,7 +11,10 @@ import UIKit
 class ThirdViewController: UIViewController {
     
     let notebook = FileNotebook()
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    let reuseIdentifier = "NoteCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +40,8 @@ class ThirdViewController: UIViewController {
 
             notebook.add(note1)
             notebook.add(note2)
+        
+        tableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: reuseIdentifier)
     }
     
 
@@ -59,13 +64,8 @@ extension ThirdViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         
-        cell.textLabel?.text = notebook.notes[String(indexPath.row)]?.title
-        cell.textLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = notebook.notes[String(indexPath.row)]?.content
-        cell.detailTextLabel?.numberOfLines = 0
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! NoteTableViewCell
         
         return cell
     }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="272" id="KGk-i7-Jjw" customClass="NoteTableViewCell" customModule="Notes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHB-Au-XRR">
+                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                        <color key="backgroundColor" red="0.0" green="0.78070762100000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="eld-jz-AGy"/>
+                            <constraint firstAttribute="height" constant="30" id="wWT-MP-ACM"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-Y3-QH2" userLabel="Text Stack View">
+                        <rect key="frame" x="50" y="0.0" width="270" height="71.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-Da-Rga">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXa-wM-A3j">
+                                <rect key="frame" x="0.0" y="51" width="270" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Onl-Y3-QH2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Guo-kR-zka"/>
+                    <constraint firstItem="sHB-Au-XRR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Sw5-7d-2cm"/>
+                    <constraint firstItem="sHB-Au-XRR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="WZr-An-fNN"/>
+                    <constraint firstItem="Onl-Y3-QH2" firstAttribute="leading" secondItem="sHB-Au-XRR" secondAttribute="trailing" constant="10" id="bLc-5a-Krp"/>
+                    <constraint firstAttribute="bottom" secondItem="Onl-Y3-QH2" secondAttribute="bottom" id="mmM-Fa-Ats"/>
+                    <constraint firstAttribute="trailing" secondItem="Onl-Y3-QH2" secondAttribute="trailing" id="xXy-4y-G9R"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="NoteCell"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="content" destination="NXa-wM-A3j" id="gPU-Tb-nOq"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="34.151785714285715"/>
+        </tableViewCell>
+    </objects>
+</document>
