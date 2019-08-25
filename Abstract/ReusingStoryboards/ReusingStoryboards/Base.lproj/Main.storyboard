@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,86 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReusingStoryboards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UxI-gt-KpB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2S-33-WLx">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
+                                        <connections>
+                                            <segue destination="Qmo-lX-IK6" kind="embed" id="9zQ-83-bJn"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAY-iZ-ckD">
+                                        <rect key="frame" x="0.0" y="204.5" width="414" height="204.5"/>
+                                        <connections>
+                                            <segue destination="1rR-xN-bD4" kind="embed" id="cMs-Tb-2tL"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31V-gN-LhI">
+                                        <rect key="frame" x="0.0" y="409" width="414" height="204.5"/>
+                                        <connections>
+                                            <segue destination="cAC-jT-gWP" kind="embed" id="gw3-Ms-f7l"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHE-rv-Hwh">
+                                        <rect key="frame" x="0.0" y="613.5" width="414" height="204.5"/>
+                                        <connections>
+                                            <segue destination="d79-Pl-QMd" kind="embed" id="gli-FF-zgo"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UxI-gt-KpB" secondAttribute="bottom" id="7k0-ed-hmT"/>
+                            <constraint firstItem="UxI-gt-KpB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Djz-FP-ZXL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UxI-gt-KpB" secondAttribute="trailing" id="Ksi-ix-vna"/>
+                            <constraint firstItem="UxI-gt-KpB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="edp-eo-PlD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="20.758928571428569"/>
+        </scene>
+        <!--Reuse-->
+        <scene sceneID="TSj-ti-4Gs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reuse" id="Qmo-lX-IK6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Qj-EZ-tNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="35"/>
+        </scene>
+        <!--Reuse-->
+        <scene sceneID="mkW-hN-IzC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reuse" id="cAC-jT-gWP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfj-p2-DbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="94"/>
+        </scene>
+        <!--Reuse-->
+        <scene sceneID="UUe-xU-oiW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reuse" id="d79-Pl-QMd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcJ-dA-8XU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="152"/>
+        </scene>
+        <!--Reuse-->
+        <scene sceneID="hgn-Iu-mjo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reuse" id="1rR-xN-bD4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4wa-e6-6yC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008" y="1"/>
         </scene>
     </scenes>
 </document>

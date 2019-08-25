@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Reuse View Controller-->
         <scene sceneID="lOi-yP-54c">
             <objects>
-                <viewController id="Mif-GK-PdC" sceneMemberID="viewController">
+                <viewController id="Mif-GK-PdC" customClass="ReuseViewController" customModule="ReusingStoryboards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4RU-Gy-wpA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Very complex Storyboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSy-3A-Rcn">
-                                <rect key="frame" x="10" y="30" width="218" height="24"/>
+                                <rect key="frame" x="147" y="633" width="218" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,8 +27,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NSy-3A-Rcn" firstAttribute="leading" secondItem="fIZ-TL-8dx" secondAttribute="leading" constant="10" id="YDp-v2-LXn"/>
-                            <constraint firstItem="NSy-3A-Rcn" firstAttribute="top" secondItem="fIZ-TL-8dx" secondAttribute="top" constant="10" id="wWS-NV-2gm"/>
+                            <constraint firstItem="fIZ-TL-8dx" firstAttribute="bottom" secondItem="NSy-3A-Rcn" secondAttribute="bottom" constant="10" id="Iwd-Mj-hvu"/>
+                            <constraint firstItem="fIZ-TL-8dx" firstAttribute="trailing" secondItem="NSy-3A-Rcn" secondAttribute="trailing" constant="10" id="rvB-Cb-YLY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fIZ-TL-8dx"/>
                     </view>

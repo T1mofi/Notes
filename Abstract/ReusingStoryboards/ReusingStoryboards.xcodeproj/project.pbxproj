@@ -12,6 +12,8 @@
 		071FE809231147C900627687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071FE807231147C900627687 /* Main.storyboard */; };
 		071FE80B231147CB00627687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071FE80A231147CB00627687 /* Assets.xcassets */; };
 		071FE80E231147CB00627687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071FE80C231147CB00627687 /* LaunchScreen.storyboard */; };
+		071FE8172311481E00627687 /* Reuse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071FE8152311481E00627687 /* Reuse.storyboard */; };
+		071FE81923114FB800627687 /* ReuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FE81823114FB800627687 /* ReuseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		071FE80A231147CB00627687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		071FE80D231147CB00627687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		071FE80F231147CB00627687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		071FE8162311481E00627687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ReusingStoryboards/Base.lproj/Reuse.storyboard; sourceTree = "<group>"; };
+		071FE81823114FB800627687 /* ReuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				071FE803231147C900627687 /* AppDelegate.swift */,
 				071FE805231147C900627687 /* ViewController.swift */,
 				071FE807231147C900627687 /* Main.storyboard */,
+				071FE8152311481E00627687 /* Reuse.storyboard */,
+				071FE81823114FB800627687 /* ReuseViewController.swift */,
 				071FE80A231147CB00627687 /* Assets.xcassets */,
 				071FE80C231147CB00627687 /* LaunchScreen.storyboard */,
 				071FE80F231147CB00627687 /* Info.plist */,
@@ -125,6 +131,7 @@
 				071FE80E231147CB00627687 /* LaunchScreen.storyboard in Resources */,
 				071FE80B231147CB00627687 /* Assets.xcassets in Resources */,
 				071FE809231147C900627687 /* Main.storyboard in Resources */,
+				071FE8172311481E00627687 /* Reuse.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071FE81923114FB800627687 /* ReuseViewController.swift in Sources */,
 				071FE806231147C900627687 /* ViewController.swift in Sources */,
 				071FE804231147C900627687 /* AppDelegate.swift in Sources */,
 			);
@@ -157,6 +165,14 @@
 				071FE80D231147CB00627687 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		071FE8152311481E00627687 /* Reuse.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				071FE8162311481E00627687 /* Base */,
+			);
+			name = Reuse.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

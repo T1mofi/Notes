@@ -13,6 +13,7 @@ class ReuseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "yoga")!)
         // Do any additional setup after loading the view.
     }
     
