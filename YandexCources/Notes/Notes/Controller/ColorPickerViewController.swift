@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ColorPickerViewController: UINavigationController {
+class ColorPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

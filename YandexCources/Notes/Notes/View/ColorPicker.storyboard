@@ -13,7 +13,7 @@
         <!--ColorPicker-->
         <scene sceneID="emb-8z-C2B">
             <objects>
-                <viewController id="7Di-S2-Uje" sceneMemberID="viewController">
+                <viewController id="7Di-S2-Uje" customClass="ColorPickerViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkH-sT-aFL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw2-pa-IBg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw2-pa-IBg" customClass="GradientView" customModule="Notes" customModuleProvider="target">
                                 <rect key="frame" x="20" y="224.5" width="374" height="564.5"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>

@@ -12,6 +12,7 @@
 		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
 		0737EC2123156AF30021B8D0 /* ColorPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */; };
 		0737EC232315A3360021B8D0 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737EC222315A3360021B8D0 /* ColorPickerViewController.swift */; };
+		0737EC2B2315A9560021B8D0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737EC2A2315A9560021B8D0 /* GradientView.swift */; };
 		07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664622BBF934009E1019 /* AppDelegate.swift */; };
 		07E7664922BBF934009E1019 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7664822BBF934009E1019 /* ViewController.swift */; };
 		07E7664C22BBF934009E1019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664A22BBF934009E1019 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		0728837622C3B57100380D3A /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
 		0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorPicker.storyboard; sourceTree = "<group>"; };
 		0737EC222315A3360021B8D0 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		0737EC2A2315A9560021B8D0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		07E7664322BBF934009E1019 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E7664622BBF934009E1019 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E7664822BBF934009E1019 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		0720DECF23018DE500EFCEC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0737EC2A2315A9560021B8D0 /* GradientView.swift */,
 				0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */,
 				07E7664A22BBF934009E1019 /* Main.storyboard */,
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
@@ -246,6 +249,7 @@
 				0737EC232315A3360021B8D0 /* ColorPickerViewController.swift in Sources */,
 				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
+				0737EC2B2315A9560021B8D0 /* GradientView.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
