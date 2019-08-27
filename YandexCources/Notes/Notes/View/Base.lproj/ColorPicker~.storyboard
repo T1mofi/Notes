@@ -69,14 +69,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyv-f8-uL5">
-                                <rect key="frame" x="162.5" y="451.5" width="89" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="ColorPicker"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fr-I7Z">
+                                <rect key="frame" x="126" y="449" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="l2j-ZU-FYn" kind="show" id="ZbB-7s-XMS"/>
+                                    <segue destination="fiz-ET-1bK" kind="embed" id="eFC-IK-3eM"/>
                                 </connections>
-                            </button>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -84,18 +83,16 @@
                             <constraint firstItem="Fbw-ov-ipw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="83o-CC-zed"/>
                             <constraint firstItem="x7t-Re-1vA" firstAttribute="leading" secondItem="Fbw-ov-ipw" secondAttribute="leading" id="Agt-1z-FxZ"/>
                             <constraint firstItem="x7t-Re-1vA" firstAttribute="top" secondItem="Fbw-ov-ipw" secondAttribute="bottom" constant="10" id="DAj-pl-Jpu"/>
-                            <constraint firstItem="Wyv-f8-uL5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FaM-Ob-ZiR"/>
                             <constraint firstItem="uYV-nK-akE" firstAttribute="top" secondItem="x7t-Re-1vA" secondAttribute="bottom" constant="10" id="KZO-WK-fe9"/>
                             <constraint firstItem="Fbw-ov-ipw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="cOl-o8-rVo"/>
                             <constraint firstItem="Fbw-ov-ipw" firstAttribute="trailing" secondItem="x7t-Re-1vA" secondAttribute="trailing" id="cXJ-Sy-kih"/>
-                            <constraint firstItem="Wyv-f8-uL5" firstAttribute="top" secondItem="uYV-nK-akE" secondAttribute="bottom" constant="20" id="jkl-B1-pao"/>
                             <constraint firstItem="Fbw-ov-ipw" firstAttribute="trailing" secondItem="uYV-nK-akE" secondAttribute="trailing" id="lLr-VS-oDH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fbw-ov-ipw" secondAttribute="trailing" constant="10" id="wTN-cE-NjO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="e6e-of-DxK">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Ay3-Mz-DgY"/>
+                        <barButtonItem key="backBarButtonItem" title="cancle" id="W9h-iU-R5y"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RSa-HJ-Cdz"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="m3n-MZ-eYm"/>
                     </navigationItem>
@@ -106,14 +103,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="41.517857142857139"/>
-        </scene>
-        <!--ColorPicker-->
-        <scene sceneID="XJ6-FJ-xQR">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ColorPicker" id="l2j-ZU-FYn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GlA-oF-S2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="863" y="42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wya-XN-HEy">
@@ -130,6 +119,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gE-h8-0Rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-783" y="42"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9qG-dV-I1L">
+            <objects>
+                <viewController id="fiz-ET-1bK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XNT-i0-lXN">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2A-tK-8Pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>
