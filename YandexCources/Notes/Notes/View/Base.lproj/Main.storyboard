@@ -65,7 +65,7 @@
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
@@ -100,7 +100,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="m3n-MZ-eYm"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="OJP-7s-kmJ" id="49a-MU-Fsw"/>
+                        <outlet property="datePicker" destination="OJP-7s-kmJ" id="g3x-uf-5ue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

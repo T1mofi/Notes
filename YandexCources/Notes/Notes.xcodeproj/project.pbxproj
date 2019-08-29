@@ -59,9 +59,9 @@
 		0720DECF23018DE500EFCEC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0737EC2A2315A9560021B8D0 /* GradientView.swift */,
-				0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */,
 				07E7664A22BBF934009E1019 /* Main.storyboard */,
+				0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */,
+				0737EC2A2315A9560021B8D0 /* GradientView.swift */,
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -108,8 +108,8 @@
 		07E7664522BBF934009E1019 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				0720DECF23018DE500EFCEC0 /* View */,
 				072227E422C9695E00323738 /* Model */,
+				0720DECF23018DE500EFCEC0 /* View */,
 				0720DED023018DFE00EFCEC0 /* Controller */,
 				07E7664D22BBF936009E1019 /* Assets.xcassets */,
 				07E7664622BBF934009E1019 /* AppDelegate.swift */,

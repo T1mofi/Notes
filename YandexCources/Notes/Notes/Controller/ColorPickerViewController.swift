@@ -10,10 +10,29 @@ import UIKit
 
 class ColorPickerViewController: UIViewController {
 
+    
+    @IBOutlet weak var choosedColorView: UIView!
+    @IBOutlet weak var brightnessSlider: UISlider!
+    @IBOutlet weak var gradientView: GradientView!
+
+    @IBAction func brightnessChanged(_ sender: UISlider) {
+        let newBrightness = CGFloat(sender.value)
+        let newColor = choosedColorView.backgroundColor?.withAlphaComponent(newBrightness)
+        
+        choosedColorView.backgroundColor = newColor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gradientView.setup { [weak self] color in
+            let currentColorBrightness = CGFloat(self?.brightnessSlider.value ?? 1)
+            //TODO: rename colorWithCurrentBrightnes
+            let colorWithAlpha = color.withAlphaComponent(currentColorBrightness)
+            
+            self?.choosedColorView.backgroundColor = colorWithAlpha
+        }
 
-        // Do any additional setup after loading the view.
     }
     
 

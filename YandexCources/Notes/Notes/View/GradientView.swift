@@ -14,7 +14,7 @@ class GradientView: UIView {
     
     private let gradientLayer = CAGradientLayer()
     private let colorPointer = CAShapeLayer()
-    private let colorPointerSize: CGFloat = 5
+    private let colorPointerSize: CGFloat = 15
     
     private var colorUpdater: (UIColor) -> Void = { _ in }
     
@@ -70,6 +70,8 @@ extension GradientView {
 private extension GradientView {
 
     func setupGradient() {
+        self.layer.cornerRadius = 5
+        gradientLayer.cornerRadius = 5
         gradientLayer.colors = basicColors.map { $0.cgColor }
         layer.addSublayer(gradientLayer)
 
@@ -78,8 +80,7 @@ private extension GradientView {
         colorPointer.path = pointerPath.cgPath
         colorPointer.fillColor = UIColor.clear.cgColor
         colorPointer.strokeColor = UIColor.black.cgColor
-        colorPointer.lineWidth = colorPointerSize / 4
-        colorPointer.frame = pointerRect
+        colorPointer.lineWidth = colorPointerSize / 10
         colorPointer.frame = pointerRect
         layer.addSublayer(colorPointer)
         colorPointer.position = CGPoint(x: colorPointerSize, y: colorPointerSize)
