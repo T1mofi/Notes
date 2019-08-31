@@ -97,8 +97,8 @@
                     <navigationItem key="navigationItem" title="ColorPicker" id="sne-Xx-fyJ"/>
                     <connections>
                         <outlet property="brightnessSlider" destination="edr-Lb-Ncc" id="joN-On-yoo"/>
-                        <outlet property="choosedColorView" destination="W8y-S5-T9f" id="kZz-AQ-vSh"/>
                         <outlet property="gradientView" destination="Nw2-pa-IBg" id="4dK-Cs-Yve"/>
+                        <outlet property="selectedColorView" destination="W8y-S5-T9f" id="kZz-AQ-vSh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3O-Ot-5dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

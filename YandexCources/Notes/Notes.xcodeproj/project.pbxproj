@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		071D409B2314607E00439D4B /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071D409A2314607E00439D4B /* UiViewExtension.swift */; };
 		072227E322C92F9100323738 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072227E222C92F9100323738 /* FileNotebook.swift */; };
-		0728837722C3B57100380D3A /* NoteExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteExtension.swift */; };
+		0728837722C3B57100380D3A /* NoteJSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0728837622C3B57100380D3A /* NoteJSONExtension.swift */; };
 		0737EC2123156AF30021B8D0 /* ColorPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */; };
 		0737EC232315A3360021B8D0 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737EC222315A3360021B8D0 /* ColorPickerViewController.swift */; };
 		0737EC2B2315A9560021B8D0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737EC2A2315A9560021B8D0 /* GradientView.swift */; };
@@ -25,7 +25,7 @@
 /* Begin PBXFileReference section */
 		071D409A2314607E00439D4B /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		072227E222C92F9100323738 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
-		0728837622C3B57100380D3A /* NoteExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteExtension.swift; sourceTree = "<group>"; };
+		0728837622C3B57100380D3A /* NoteJSONExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteJSONExtension.swift; sourceTree = "<group>"; };
 		0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorPicker.storyboard; sourceTree = "<group>"; };
 		0737EC222315A3360021B8D0 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		0737EC2A2315A9560021B8D0 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				07E7665822BBF9D4009E1019 /* Note.swift */,
-				0728837622C3B57100380D3A /* NoteExtension.swift */,
+				0728837622C3B57100380D3A /* NoteJSONExtension.swift */,
 				072227E222C92F9100323738 /* FileNotebook.swift */,
 				071D409A2314607E00439D4B /* UiViewExtension.swift */,
 			);
@@ -247,7 +247,7 @@
 				072227E322C92F9100323738 /* FileNotebook.swift in Sources */,
 				07E7664922BBF934009E1019 /* ViewController.swift in Sources */,
 				0737EC232315A3360021B8D0 /* ColorPickerViewController.swift in Sources */,
-				0728837722C3B57100380D3A /* NoteExtension.swift in Sources */,
+				0728837722C3B57100380D3A /* NoteJSONExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
 				0737EC2B2315A9560021B8D0 /* GradientView.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,

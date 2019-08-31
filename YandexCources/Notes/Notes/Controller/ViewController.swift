@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBAction func switchToggled(_ sender: Any) {
+    @IBAction func autoDeleteSwitchToggled(_ sender: Any) {
         datePicker.isHidden.toggle()
     }
     

@@ -11,15 +11,15 @@ import UIKit
 class ColorPickerViewController: UIViewController {
 
     
-    @IBOutlet weak var choosedColorView: UIView!
+    @IBOutlet weak var selectedColorView: UIView!
     @IBOutlet weak var brightnessSlider: UISlider!
     @IBOutlet weak var gradientView: GradientView!
 
     @IBAction func brightnessChanged(_ sender: UISlider) {
         let newBrightness = CGFloat(sender.value)
-        let newColor = choosedColorView.backgroundColor?.withAlphaComponent(newBrightness)
+        let newColor = selectedColorView.backgroundColor?.withAlphaComponent(newBrightness)
         
-        choosedColorView.backgroundColor = newColor
+        selectedColorView.backgroundColor = newColor
     }
     
     override func viewDidLoad() {
@@ -27,12 +27,10 @@ class ColorPickerViewController: UIViewController {
         
         gradientView.setup { [weak self] color in
             let currentColorBrightness = CGFloat(self?.brightnessSlider.value ?? 1)
-            //TODO: rename colorWithCurrentBrightnes
-            let colorWithAlpha = color.withAlphaComponent(currentColorBrightness)
+            let colorWithBrightness = color.withAlphaComponent(currentColorBrightness)
             
-            self?.choosedColorView.backgroundColor = colorWithAlpha
+            self?.selectedColorView.backgroundColor = colorWithBrightness
         }
-
     }
     
 

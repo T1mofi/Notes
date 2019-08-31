@@ -8,7 +8,9 @@
 
 import UIKit
 
+
 fileprivate let basicColors: [UIColor] = [.red, .orange, .yellow, .green, .blue, .purple]
+
 
 class GradientView: UIView {
     
@@ -16,7 +18,7 @@ class GradientView: UIView {
     private let colorPointer = CAShapeLayer()
     private let colorPointerSize: CGFloat = 15
     
-    private var colorUpdater: (UIColor) -> Void = { _ in }
+    private var selectedColorUpdater: (UIColor) -> Void = { _ in }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,11 +35,37 @@ class GradientView: UIView {
         gradientLayer.frame = bounds
     }
     
-    func setup(colorUpdater: @escaping (UIColor) -> Void) {
-        self.colorUpdater = colorUpdater
-        colorUpdater(.red)
+    func setup(selectedColorUpdater: @escaping (UIColor) -> Void) {
+        self.selectedColorUpdater = selectedColorUpdater
+        selectedColorUpdater(.red)
     }
 }
+
+
+// MARK: - Setup
+private extension GradientView {
+    
+    func setupGradient() {
+        
+        //Add layer with diffirent colors
+        self.layer.cornerRadius = 5
+        gradientLayer.cornerRadius = 5
+        gradientLayer.colors = basicColors.map { $0.cgColor }
+        layer.addSublayer(gradientLayer)
+        
+        //Add pointer
+        let pointerRect = CGRect(x: 0, y: 0, width: colorPointerSize, height: colorPointerSize)
+        let pointerPath = UIBezierPath(ovalIn: pointerRect)
+        colorPointer.path = pointerPath.cgPath
+        colorPointer.fillColor = UIColor.clear.cgColor
+        colorPointer.strokeColor = UIColor.black.cgColor
+        colorPointer.lineWidth = colorPointerSize / 10
+        colorPointer.frame = pointerRect
+        layer.addSublayer(colorPointer)
+        colorPointer.position = CGPoint(x: colorPointerSize, y: colorPointerSize)
+    }
+}
+
 
 // MARK: - Touches
 extension GradientView {
@@ -59,38 +87,16 @@ extension GradientView {
     
     private func updatePicker(for location: CGPoint) {
         guard bounds.contains(location) else { return }
-        colorPointer.isHidden = true
-        colorUpdater(colorOfPoint(point: location))
-        colorPointer.isHidden = false
         colorPointer.position = location
-    }
-}
-
-// MARK: - Setup
-private extension GradientView {
-
-    func setupGradient() {
-        self.layer.cornerRadius = 5
-        gradientLayer.cornerRadius = 5
-        gradientLayer.colors = basicColors.map { $0.cgColor }
-        layer.addSublayer(gradientLayer)
-
-        let pointerRect = CGRect(x: 0, y: 0, width: colorPointerSize, height: colorPointerSize)
-        let pointerPath = UIBezierPath(ovalIn: pointerRect)
-        colorPointer.path = pointerPath.cgPath
-        colorPointer.fillColor = UIColor.clear.cgColor
-        colorPointer.strokeColor = UIColor.black.cgColor
-        colorPointer.lineWidth = colorPointerSize / 10
-        colorPointer.frame = pointerRect
-        layer.addSublayer(colorPointer)
-        colorPointer.position = CGPoint(x: colorPointerSize, y: colorPointerSize)
+        selectedColorUpdater(getColorOfPoint(point: location))
     }
 }
 
 
+//TODO: understand this code
 extension UIView {
 
-    func colorOfPoint(point: CGPoint) -> UIColor {
+    func getColorOfPoint(point: CGPoint) -> UIColor {
         let colorSpace: CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
 

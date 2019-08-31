@@ -18,89 +18,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fbw-ov-ipw">
-                                <rect key="frame" x="10" y="98" width="394" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-nK-akE">
-                                <rect key="frame" x="10" y="184.5" width="394" height="247"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Go-Wi-NL5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwL-H8-MuF">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="31"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-AN-Vuf" userLabel="Title Text Field">
+                                        <rect key="frame" x="10" y="10" width="394" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kJ3-gO-rbJ" userLabel="Content Text View">
+                                        <rect key="frame" x="10" y="50" width="394" height="36.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxl-AL-4Eg">
+                                        <rect key="frame" x="162.5" y="363.5" width="89" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="ColorPicker"/>
+                                        <connections>
+                                            <segue destination="l2j-ZU-FYn" kind="show" id="kLy-Xm-OfN"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2hH-qZ-f0J" userLabel="Date Picker Stack View">
+                                        <rect key="frame" x="10" y="96.5" width="394" height="247"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Auto Delete " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTB-OD-8dh">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pOv-wR-OO8">
-                                                <rect key="frame" x="345" y="0.0" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="switchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="cr1-F7-tVP"/>
-                                                </connections>
-                                            </switch>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-Po-Rv1" userLabel="Auto Delete Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Auto Delete " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C33-xd-hgB" userLabel="Auto Delete Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YMp-Gq-5SN" userLabel="Auto Delete Switch">
+                                                        <rect key="frame" x="345" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="autoDeleteSwitchToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="vlF-Of-Yt3"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jiH-8B-Eq8">
+                                                <rect key="frame" x="0.0" y="31" width="394" height="216"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="588602584.796749">
+                                                    <!--2019-08-27 12:43:04 +0000-->
+                                                </date>
+                                            </datePicker>
                                         </subviews>
                                     </stackView>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OJP-7s-kmJ">
-                                        <rect key="frame" x="0.0" y="31" width="394" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="588602584.796749">
-                                            <!--2019-08-27 12:43:04 +0000-->
-                                        </date>
-                                    </datePicker>
                                 </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x7t-Re-1vA">
-                                <rect key="frame" x="10" y="138" width="394" height="36.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyv-f8-uL5">
-                                <rect key="frame" x="162.5" y="451.5" width="89" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="ColorPicker"/>
-                                <connections>
-                                    <segue destination="l2j-ZU-FYn" kind="show" id="ZbB-7s-XMS"/>
-                                </connections>
-                            </button>
+                                <constraints>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="trailing" secondItem="2hH-qZ-f0J" secondAttribute="trailing" id="4TH-mh-UcW"/>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="trailing" secondItem="kJ3-gO-rbJ" secondAttribute="trailing" id="D79-TO-U6g"/>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="width" secondItem="6Go-Wi-NL5" secondAttribute="width" constant="-20" id="N81-Eh-RhH"/>
+                                    <constraint firstAttribute="bottom" secondItem="zxl-AL-4Eg" secondAttribute="bottom" constant="10" id="NDd-04-LGm"/>
+                                    <constraint firstAttribute="trailing" secondItem="d0s-AN-Vuf" secondAttribute="trailing" constant="10" id="R9o-R6-iTA"/>
+                                    <constraint firstItem="kJ3-gO-rbJ" firstAttribute="leading" secondItem="d0s-AN-Vuf" secondAttribute="leading" id="cQ1-pR-nEh"/>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="leading" secondItem="6Go-Wi-NL5" secondAttribute="leading" constant="10" id="dNl-EF-5rZ"/>
+                                    <constraint firstItem="kJ3-gO-rbJ" firstAttribute="top" secondItem="d0s-AN-Vuf" secondAttribute="bottom" constant="10" id="elF-3x-vy8"/>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="leading" secondItem="2hH-qZ-f0J" secondAttribute="leading" id="fzd-sw-rqw"/>
+                                    <constraint firstItem="2hH-qZ-f0J" firstAttribute="top" secondItem="kJ3-gO-rbJ" secondAttribute="bottom" constant="10" id="g7p-yt-DMD"/>
+                                    <constraint firstItem="zxl-AL-4Eg" firstAttribute="top" secondItem="2hH-qZ-f0J" secondAttribute="bottom" constant="20" id="gel-cm-daD"/>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="top" secondItem="6Go-Wi-NL5" secondAttribute="top" constant="10" id="kdH-V0-yS2"/>
+                                    <constraint firstItem="zxl-AL-4Eg" firstAttribute="centerX" secondItem="6Go-Wi-NL5" secondAttribute="centerX" id="yL7-kq-Yfc"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Fbw-ov-ipw" firstAttribute="leading" secondItem="uYV-nK-akE" secondAttribute="leading" id="0yU-fV-Z24"/>
-                            <constraint firstItem="Fbw-ov-ipw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="83o-CC-zed"/>
-                            <constraint firstItem="x7t-Re-1vA" firstAttribute="leading" secondItem="Fbw-ov-ipw" secondAttribute="leading" id="Agt-1z-FxZ"/>
-                            <constraint firstItem="x7t-Re-1vA" firstAttribute="top" secondItem="Fbw-ov-ipw" secondAttribute="bottom" constant="10" id="DAj-pl-Jpu"/>
-                            <constraint firstItem="Wyv-f8-uL5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FaM-Ob-ZiR"/>
-                            <constraint firstItem="uYV-nK-akE" firstAttribute="top" secondItem="x7t-Re-1vA" secondAttribute="bottom" constant="10" id="KZO-WK-fe9"/>
-                            <constraint firstItem="Fbw-ov-ipw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="cOl-o8-rVo"/>
-                            <constraint firstItem="Fbw-ov-ipw" firstAttribute="trailing" secondItem="x7t-Re-1vA" secondAttribute="trailing" id="cXJ-Sy-kih"/>
-                            <constraint firstItem="Wyv-f8-uL5" firstAttribute="top" secondItem="uYV-nK-akE" secondAttribute="bottom" constant="20" id="jkl-B1-pao"/>
-                            <constraint firstItem="Fbw-ov-ipw" firstAttribute="trailing" secondItem="uYV-nK-akE" secondAttribute="trailing" id="lLr-VS-oDH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fbw-ov-ipw" secondAttribute="trailing" constant="10" id="wTN-cE-NjO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Go-Wi-NL5" secondAttribute="trailing" id="51h-Iv-y0o"/>
+                            <constraint firstItem="6Go-Wi-NL5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wd7-Qv-hlh"/>
+                            <constraint firstItem="6Go-Wi-NL5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jrI-ad-KW1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Go-Wi-NL5" secondAttribute="bottom" id="wwA-O1-v4W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Note" id="e6e-of-DxK">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Ay3-Mz-DgY"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RSa-HJ-Cdz"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="m3n-MZ-eYm"/>
+                    <navigationItem key="navigationItem" title="Add Note" id="IMZ-K1-U5j">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="exz-Rd-xVM"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CsB-Zw-fKK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9JR-57-awy"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="datePicker" destination="OJP-7s-kmJ" id="g3x-uf-5ue"/>
+                        <outlet property="datePicker" destination="jiH-8B-Eq8" id="RHw-ef-8lK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
