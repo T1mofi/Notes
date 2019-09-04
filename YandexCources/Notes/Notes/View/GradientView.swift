@@ -18,7 +18,7 @@ class GradientView: UIView {
     private let colorPointer = CAShapeLayer()
     private let colorPointerSize: CGFloat = 15
     
-    private var selectedColorUpdater: (UIColor) -> Void = { _ in }
+    private var selectedColorUpdater: ((UIColor) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,9 +35,8 @@ class GradientView: UIView {
         gradientLayer.frame = bounds
     }
     
-    func setup(selectedColorUpdater: @escaping (UIColor) -> Void) {
+    func configureColorUpdater(selectedColorUpdater: @escaping (UIColor) -> Void) {
         self.selectedColorUpdater = selectedColorUpdater
-        selectedColorUpdater(.red)
     }
 }
 
@@ -88,7 +87,7 @@ extension GradientView {
     private func updatePicker(for location: CGPoint) {
         guard bounds.contains(location) else { return }
         colorPointer.position = location
-        selectedColorUpdater(getColorOfPoint(point: location))
+        selectedColorUpdater?(getColorOfPoint(point: location))
     }
 }
 

@@ -78,6 +78,10 @@
                                 <rect key="frame" x="186.5" y="809" width="41" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="7Di-S2-Uje" eventType="touchUpInside" id="fF4-MZ-Hjz"/>
+                                    <segue destination="YzI-cn-WRK" kind="unwind" unwindAction="unwindToAddNoteWithSegue:" id="q3Y-TL-I3B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,6 +106,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3O-Ot-5dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YzI-cn-WRK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1052" y="42"/>
         </scene>

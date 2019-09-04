@@ -12,16 +12,40 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var noteColorView: UIView!
     
     @IBAction func autoDeleteSwitchToggled(_ sender: Any) {
         datePicker.isHidden.toggle()
+    }
+    
+    @IBAction func unwindToAddNote(segue: UIStoryboardSegue) {
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? ColorPickerViewController,
+            segue.identifier == "toColorPicker" {
+            controller.initialColor = noteColorView.backgroundColor
+            controller.configureColorCallback { [weak self] color in
+                self?.noteColorView.backgroundColor = color
+            }
+        }
+    }
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        print("perform sefue")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
 
+        
+        
+        
+        
         // Do any additional setup after loading the view.
         
 //        let note:Note = Note(

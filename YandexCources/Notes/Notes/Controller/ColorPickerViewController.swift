@@ -10,10 +10,14 @@ import UIKit
 
 class ColorPickerViewController: UIViewController {
 
-    
     @IBOutlet weak var selectedColorView: UIView!
     @IBOutlet weak var brightnessSlider: UISlider!
     @IBOutlet weak var gradientView: GradientView!
+    
+    var initialColor: UIColor?
+    
+    //TODO: rename this(transfer color to viewController?)
+    private var selectedColorCallback: ((UIColor) -> Void)?
 
     @IBAction func brightnessChanged(_ sender: UISlider) {
         let newBrightness = CGFloat(sender.value)
@@ -22,15 +26,26 @@ class ColorPickerViewController: UIViewController {
         selectedColorView.backgroundColor = newColor
     }
     
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        selectedColorCallback?(selectedColorView.backgroundColor ?? .red)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gradientView.setup { [weak self] color in
+        //set color from previev VievController
+        selectedColorView.backgroundColor = initialColor
+        
+        gradientView.configureColorUpdater { [weak self] color in
             let currentColorBrightness = CGFloat(self?.brightnessSlider.value ?? 1)
             let colorWithBrightness = color.withAlphaComponent(currentColorBrightness)
             
             self?.selectedColorView.backgroundColor = colorWithBrightness
         }
+    }
+    
+    func configureColorCallback(with selectedColorCallback: @escaping (UIColor) -> Void) {
+        self.selectedColorCallback = selectedColorCallback
     }
     
 
