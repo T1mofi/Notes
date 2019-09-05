@@ -24,16 +24,15 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? ColorPickerViewController,
-            segue.identifier == "toColorPicker" {
-            controller.initialColor = noteColorView.backgroundColor
-            controller.configureColorCallback { [weak self] color in
-                self?.noteColorView.backgroundColor = color
-            }
+                                        segue.identifier == "toColorPicker" {
+                //setUP colorPickerView
+                controller.initialColor = noteColorView.backgroundColor
+            
+                //callBack for update noteColor
+                controller.configureColorCallback { [weak self] color in
+                    self?.noteColorView.backgroundColor = color
+                }
         }
-    }
-    
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        print("perform sefue")
     }
     
     override func viewDidLoad() {
