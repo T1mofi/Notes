@@ -18,40 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Go-Wi-NL5">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Go-Wi-NL5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-AN-Vuf" userLabel="Title Text Field">
-                                        <rect key="frame" x="10" y="15" width="394" height="35"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="Jkx-sJ-nWI"/>
-                                        </constraints>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-AN-Vuf" userLabel="Title Text Field">
+                                        <rect key="frame" x="10" y="10" width="394" height="30"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kJ3-gO-rbJ" userLabel="Content Text View">
-                                        <rect key="frame" x="10" y="65" width="394" height="36.5"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="10" y="50" width="394" height="36.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2hH-qZ-f0J" userLabel="Date Picker Stack View">
-                                        <rect key="frame" x="10" y="116.5" width="394" height="247"/>
+                                        <rect key="frame" x="10" y="96.5" width="394" height="247"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-Po-Rv1" userLabel="Auto Delete Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="31"/>
@@ -79,7 +73,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNR-a2-aAF" userLabel="NoteColorView">
-                                        <rect key="frame" x="147" y="373.5" width="120" height="120"/>
+                                        <rect key="frame" x="147" y="353.5" width="120" height="120"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Klz-B1-Sb9"/>
@@ -98,7 +92,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxl-AL-4Eg">
-                                        <rect key="frame" x="162.5" y="503.5" width="89" height="33"/>
+                                        <rect key="frame" x="162.5" y="483.5" width="89" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="ColorPicker"/>
                                         <connections>
@@ -114,12 +108,12 @@
                                     <constraint firstItem="kJ3-gO-rbJ" firstAttribute="leading" secondItem="d0s-AN-Vuf" secondAttribute="leading" id="cQ1-pR-nEh"/>
                                     <constraint firstItem="d0s-AN-Vuf" firstAttribute="leading" secondItem="6Go-Wi-NL5" secondAttribute="leading" constant="10" id="dNl-EF-5rZ"/>
                                     <constraint firstItem="gNR-a2-aAF" firstAttribute="centerX" secondItem="6Go-Wi-NL5" secondAttribute="centerX" id="djd-AC-hz6"/>
-                                    <constraint firstItem="kJ3-gO-rbJ" firstAttribute="top" secondItem="d0s-AN-Vuf" secondAttribute="bottom" constant="15" id="elF-3x-vy8"/>
+                                    <constraint firstItem="kJ3-gO-rbJ" firstAttribute="top" secondItem="d0s-AN-Vuf" secondAttribute="bottom" constant="10" id="elF-3x-vy8"/>
                                     <constraint firstItem="d0s-AN-Vuf" firstAttribute="leading" secondItem="2hH-qZ-f0J" secondAttribute="leading" id="fzd-sw-rqw"/>
-                                    <constraint firstItem="2hH-qZ-f0J" firstAttribute="top" secondItem="kJ3-gO-rbJ" secondAttribute="bottom" constant="15" id="g7p-yt-DMD"/>
+                                    <constraint firstItem="2hH-qZ-f0J" firstAttribute="top" secondItem="kJ3-gO-rbJ" secondAttribute="bottom" constant="10" id="g7p-yt-DMD"/>
                                     <constraint firstItem="gNR-a2-aAF" firstAttribute="top" secondItem="2hH-qZ-f0J" secondAttribute="bottom" constant="10" id="gWl-Il-xG3"/>
                                     <constraint firstAttribute="bottom" secondItem="zxl-AL-4Eg" secondAttribute="bottom" constant="10" id="jHS-Wo-IX9"/>
-                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="top" secondItem="6Go-Wi-NL5" secondAttribute="top" constant="15" id="kdH-V0-yS2"/>
+                                    <constraint firstItem="d0s-AN-Vuf" firstAttribute="top" secondItem="6Go-Wi-NL5" secondAttribute="top" constant="10" id="kdH-V0-yS2"/>
                                     <constraint firstItem="zxl-AL-4Eg" firstAttribute="top" secondItem="gNR-a2-aAF" secondAttribute="bottom" constant="10" id="ue7-yf-dVi"/>
                                     <constraint firstItem="zxl-AL-4Eg" firstAttribute="centerX" secondItem="6Go-Wi-NL5" secondAttribute="centerX" id="yL7-kq-Yfc"/>
                                 </constraints>
@@ -140,11 +134,8 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9JR-57-awy"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="contentTextView" destination="kJ3-gO-rbJ" id="WiR-Gr-Cil"/>
                         <outlet property="datePicker" destination="jiH-8B-Eq8" id="RHw-ef-8lK"/>
                         <outlet property="noteColorView" destination="gNR-a2-aAF" id="RcM-iv-Zp0"/>
-                        <outlet property="scrollView" destination="6Go-Wi-NL5" id="2oz-vX-H1k"/>
-                        <outlet property="titleTextField" destination="d0s-AN-Vuf" id="Qda-YE-Fnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

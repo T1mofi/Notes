@@ -33,7 +33,7 @@ class ColorPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set color from previev ViewController
+        //set color from previev VievController
         selectedColorView.backgroundColor = initialColor
         
         gradientView.configureColorUpdater { [weak self] color in

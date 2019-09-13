@@ -8,39 +8,40 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var noteColorView: UIView!
-    @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var titleTextField: UITextField!
     
     @IBAction func autoDeleteSwitchToggled(_ sender: Any) {
         datePicker.isHidden.toggle()
     }
     
-    @IBAction func unwindToAddNote(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToAddNote(segue: UIStoryboardSegue) {
+    
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? ColorPickerViewController,
-                                        segue.identifier == "toColorPicker" {
-                //setUP colorPickerView
-                controller.initialColor = noteColorView.backgroundColor
-            
-                //callBack for update noteColor
-                controller.configureColorCallback { [weak self] color in
-                    self?.noteColorView.backgroundColor = color
-                }
+            segue.identifier == "toColorPicker" {
+            controller.initialColor = noteColorView.backgroundColor
+            controller.configureColorCallback { [weak self] color in
+                self?.noteColorView.backgroundColor = color
+            }
         }
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        setupKeyboardDissappear()
         
         
 
+        
+        
+        
+        
         // Do any additional setup after loading the view.
         
 //        let note:Note = Note(
@@ -79,24 +80,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //
 //        notebook.loadFromFile()
 
-    }
-}
-
-extension ViewController {
-    func setupKeyboardDissappear() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        
-        view.addGestureRecognizer(tap)
-        
-        //Dissapear keyboard by tapping on screen
-        titleTextField.delegate = self
-    }
-    
-    //Dissapear keyboard on text field through RETURN button
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        titleTextField.resignFirstResponder()
-        
-        return true
     }
 }
 
