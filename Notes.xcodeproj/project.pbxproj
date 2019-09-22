@@ -54,8 +54,8 @@
 			children = (
 				07E7664A22BBF934009E1019 /* Main.storyboard */,
 				0737EC2023156AF30021B8D0 /* ColorPicker.storyboard */,
-				0737EC2A2315A9560021B8D0 /* GradientView.swift */,
 				07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */,
+				0737EC2A2315A9560021B8D0 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
