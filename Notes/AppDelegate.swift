@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CocoaLumberjack
 
 #if FREE
 let isFreeVersion = true
@@ -19,22 +18,8 @@ let isFreeVersion = false
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    public let fileLogger: DDFileLogger = DDFileLogger()
-    
-    private func setupLogger() {
-        DDLog.add(DDTTYLogger.sharedInstance)
-        
-        // File logger
-        fileLogger.rollingFrequency = TimeInterval(60*60*24)
-        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-        DDLog.add(fileLogger, with: .info)
-    }
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        setupLogger()
 
         if isFreeVersion == true {
             print("Free Version")
