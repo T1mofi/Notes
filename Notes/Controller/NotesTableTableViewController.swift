@@ -32,7 +32,8 @@ class NotesTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let addNoteViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as UIViewController
 
-        present(addNoteViewController, animated: true, completion: nil)
+//        present(addNoteViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(addNoteViewController, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
