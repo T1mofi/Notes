@@ -19,6 +19,7 @@
 		07E7664E22BBF936009E1019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664D22BBF936009E1019 /* Assets.xcassets */; };
 		07E7665122BBF936009E1019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E7664F22BBF936009E1019 /* LaunchScreen.storyboard */; };
 		07E7665922BBF9D4009E1019 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E7665822BBF9D4009E1019 /* Note.swift */; };
+		07EC9D3A233A9F98006E5F91 /* NotesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EC9D39233A9F98006E5F91 /* NotesTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		07E7665022BBF936009E1019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07E7665222BBF936009E1019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07E7665822BBF9D4009E1019 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		07EC9D39233A9F98006E5F91 /* NotesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				07E7664822BBF934009E1019 /* ViewController.swift */,
 				0737EC222315A3360021B8D0 /* ColorPickerViewController.swift */,
+				07EC9D39233A9F98006E5F91 /* NotesTableTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				0728837722C3B57100380D3A /* NoteJSONExtension.swift in Sources */,
 				07E7664722BBF934009E1019 /* AppDelegate.swift in Sources */,
 				0737EC2B2315A9560021B8D0 /* GradientView.swift in Sources */,
+				07EC9D3A233A9F98006E5F91 /* NotesTableTableViewController.swift in Sources */,
 				07E7665922BBF9D4009E1019 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
