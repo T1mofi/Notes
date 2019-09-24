@@ -30,22 +30,22 @@ class NotesTableTableViewController: UITableViewController {
 //    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let colorPickerViewController:UIViewController = UIStoryboard(name: "ColorPicker", bundle: nil).instantiateViewController(withIdentifier: "ColorPickerViewController") as UIViewController
-        
-        present(colorPickerViewController, animated: true, completion: nil)
+        let addNoteViewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNoteViewController") as UIViewController
+
+        present(addNoteViewController, animated: true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 18
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         
-        cell.textLabel?.text = "cell"
+        cell.textLabel?.text = "Note"
 
         return cell
     }
